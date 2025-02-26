@@ -10,7 +10,7 @@ VANTA.NET({
     scaleMobile: 1.00,
     color: 0xfffff0,
     points: 9.00,
-    maxDistance: 4.00
+    maxDistance: 12.00
 });
 
 const imagenes = [
