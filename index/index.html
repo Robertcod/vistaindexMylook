@@ -14,88 +14,180 @@
 <body>
     <main>
         <section class="sectionBienvenida">
+            <!-- Sección de bienvenida que contiene dos artículos -->
+            
             <article class="bienvenidaIzquierda" id="bienvenidaIzquierda">
+                <!-- Contenedor izquierdo con el logo, el mensaje de bienvenida y los botones -->
+        
                 <div class="logo">
-                    <img class="bombilla" src="/icons/bombilla.svg" alt="Descripción del SVG">
+                    <!-- Icono de bombilla representando la marca -->
+                    <i class="fa-solid fa-lightbulb bombilla" style="color: #ffffff;"></i>
                 </div>
+        
                 <div class="textoBienvenida">
+                    <!-- Mensaje de bienvenida y llamada a la acción -->
                     <h3>Bienvenido a</h3>
                     <h1>MYLOOK</h1>
                     <p>Resplandece con estilo.
                         Haz tu cita hoy mismo y déjate envolver por la belleza
                     </p>
-                    <a href="#"><button>¡iniciar ahora!</button></a>
+                    <!-- Botón para iniciar sesión -->
+                    <a href="{{ route('login') }}">
+                        <button>¡Iniciar ahora!</button>
+                    </a>
                 </div>
+        
                 <div class="redesSociales">
-                    <img src="/icons/redesSociales/facebook-brands.svg" alt="" srcset="">
-                    <img src="/icons/redesSociales/instagram (1).svg" alt="" srcset="">
-                    <img src="/icons/redesSociales/whatsapp (3).svg" alt="" srcset="">
+                    <!-- Sección de iconos de redes sociales -->
+                    <i class="fab fa-facebook-f iconFacebook"></i> <!-- Facebook -->
+                    <i class="fab fa-instagram"></i> <!-- Instagram -->
+                    <i class="fab fa-whatsapp"></i> <!-- WhatsApp -->
                 </div>
-
+        
             </article>
+        
             <article class="bienvenidaDerecha">
-
+                <!-- Contenedor derecho donde se mostrarán las imágenes de fondo dinámicas -->
+            </article>
+        
         </section>
+        
         <section class="servicios">
-            <h2>¿Que encuentras en MYLOOK?</h2>
-            <p>Aqui encontraras diferentes tipos de establecimientos
-                para brindarte una gran cantidad de servicios
+            <!-- Sección de servicios disponibles en MYLOOK -->
+        
+            <h2>¿Qué encuentras en MYLOOK?</h2>
+            <p>Aquí encontrarás diferentes tipos de establecimientos
+                para brindarte una gran cantidad de servicios.
             </p>
-            <div class="contenedorSeccionEstablecimientos">
+        
+            <div class="contenedorSeccionServicios">
+                <!-- Contenedor de la sección de servicios -->
+        
                 <h3 class="subtitulo">TIPOS DE ESTABLECIMIENTO</h3>
+                
                 <div class="contenedorServiciosImgs">
+                    <!-- Contenedor que agrupa las tarjetas de servicios -->
+        
+                    <!-- Tarjeta de servicio: Depilación -->
                     <div class="servicioCard">
-                        <img src="/imagenes/depilacion2.jpg" alt="" srcset="">
-                        <h4>Depilacion</h4>
+                        <img src="https://img.freepik.com/foto-gratis/piernas-mujer-hermosa-piel-blanca-suave-aislado-blanco_231208-4863.jpg?t=st=1740667189~exp=1740670789~hmac=5f64d69589b911da2b40cfdb9cca7250ab67e70d3d567a25af54e19bc34d73a0&w=1060"
+                            alt="Depilación">
+                        <h4>Depilación</h4>
                     </div>
+        
+                    <!-- Tarjeta de servicio: Uñas -->
                     <div class="servicioCard">
-                        <img src="/imagenes/uñas2.jpg" alt="" srcset="">
+                        <img src="https://img.freepik.com/foto-gratis/mujer-mostrando-sus-hermosas-unas_23-2148697087.jpg?t=st=1740667114~exp=1740670714~hmac=83ce4f83c8103ba5f33985642944590cb01186337833a99ab6a5857346e75b35&w=900"
+                            alt="Uñas">
                         <h4>Uñas</h4>
                     </div>
+        
+                    <!-- Tarjeta de servicio: Barbería -->
                     <div class="servicioCard">
-                        <img src="/imagenes/barba2.jpg" alt="" srcset="">
-                        <h4>Barberia</h4>
+                        <img src="https://img.freepik.com/foto-gratis/cliente-haciendo-corte-pelo-salon-peluqueria_1303-20772.jpg?t=st=1740667066~exp=1740670666~hmac=2c90c4670a454c46b3441b49e01e9cd0c7a0c21d179f28ba500decd83644f388&w=1060"
+                            alt="Barbería">
+                        <h4>Barbería</h4>
                     </div>
+        
+                    <!-- Tarjeta de servicio: Maquillaje -->
                     <div class="servicioCard">
-                        <img src="/imagenes/maquillaje2.jpg" alt="" srcset="">
+                        <img src="https://img.freepik.com/foto-gratis/mujer-maquillarse-profesional_23-2149084920.jpg?t=st=1740667238~exp=1740670838~hmac=863bd165daad128f4f234fff8919cd9e29c66bfb32b617aa6a86a25c86cddd22&w=1060"
+                            alt="Maquillaje">
                         <h4>Maquillaje</h4>
                     </div>
+        
                 </div>
             </div>
-
+        
         </section>
+        
 
 
 
         <section class="establecimientosRecomendados">
-            <h3 class="subtitulo">
-                Establecimientos destacados de la semana
-            </h3>
-
+            <!-- Sección de establecimientos recomendados de la semana -->
+        
+            <h3 class="subtitulo">Establecimientos destacados de la semana</h3>
+        
             <div class="contenedorImagenesDestacado">
+                <!-- Contenedor que agrupa las tarjetas de los establecimientos destacados -->
+        
+                <!-- Tarjeta del establecimiento "Vanidosas" -->
                 <div class="cardDestacado">
-                    <img src="https://vanidosasalamoda.cl/cdn/shop/files/Diseno_sin_titulo-4.png?height=628&pad_color=ffffff&v=1679602912&width=1200" alt="" class="destacadoImagen">
-                    <h4>Vanidosas</h2>
+                    <img src="https://vanidosasalamoda.cl/cdn/shop/files/Diseno_sin_titulo-4.png?height=628&pad_color=ffffff&v=1679602912&width=1200"
+                        alt="Imagen de Vanidosas" class="destacadoImagen">
+                    <div class="nombrePosicion">
+                        <h4>Vanidosas</h4>
+                        <img src="https://img.icons8.com/wired/64/FFFFFF/2-circle.png" alt="Puesto número 2" />
+                    </div>
                 </div>
+        
+                <!-- Tarjeta del establecimiento "Imperio" -->
                 <div class="cardDestacado">
-                    <img src="https://d1yjjnpx0p53s8.cloudfront.net/logotipo-imperio-barberia-vector1.png" alt="" class="destacadoImagen">
-                    <h4>Imperio</h2>
-                        <img class="iconPosition" src="/icons//numberOne.svg" alt="" srcset="">
+                    <img src="https://d1yjjnpx0p53s8.cloudfront.net/logotipo-imperio-barberia-vector1.png" 
+                        alt="Imagen de Imperio" class="destacadoImagen">
+                    <div class="nombrePosicion">
+                        <h4>Imperio</h4>
+                        <img src="https://img.icons8.com/wired/64/FFFFFF/1-circle.png" alt="Puesto número 1" />
+                    </div>
                 </div>
-                <div class="cardDestacado tercero">
-                    <img src="https://img.freepik.com/vector-premium/plantilla-vectorial-diseno-logotipo-marca-real-lujo_441059-968.jpg?semt=ais_hybrid" alt="" class="destacadoImagen">
-                    <h4>Luxury</h2>
+        
+                <!-- Tarjeta del establecimiento "Luxury" -->
+                <div class="cardDestacado">
+                    <img src="https://img.freepik.com/vector-premium/plantilla-vectorial-diseno-logotipo-marca-real-lujo_441059-968.jpg?semt=ais_hybrid"
+                        alt="Imagen de Luxury" class="destacadoImagen">
+                    <div class="nombrePosicion">
+                        <h4>Luxury</h4>
+                        <img src="https://img.icons8.com/wired/64/FFFFFF/3-circle--v1.png" alt="Puesto número 3" />
+                    </div>
                 </div>
-            </div>
-
-
+                
             </div>
         </section>
+        
+
     </main>
+    <footer>
+        <!-- Sección de información sobre la empresa -->
+        <section class="sobreNosotros">
+            <h2>Sobre Nosotros</h2>
+            <div class="sobreNosotrosContenido">
+                <!-- Enlaces a diferentes secciones informativas -->
+                <a href="">¿Quienes somos?</a>
+                <a href="">Eventos</a>
+                <a href="">Contáctanos</a>
+            </div>
+    
+            <!-- Íconos de redes sociales -->
+            <div class="redes">
+                <i class="fab fa-facebook-f iconFacebook icon"></i> <!-- Facebook -->
+                <i class="fab fa-instagram icon"></i> <!-- Instagram -->
+                <i class="fab fa-whatsapp icon"></i> <!-- WhatsApp -->
+            </div>
+        </section>
+    
+        <!-- Sección del logo y nombre de la empresa -->
+        <section class="sta">
+            <div class="contenedorLogoFooter">
+                <i class="fa-solid fa-lightbulb logoFooter" style="color: #ffffff;"></i>
+            </div>
+            <h2>STA</h2>
+        </section>
+    
+        <!-- Sección de atención al cliente -->
+        <section class="atencionCliente">
+            <h2>Atención al cliente</h2>
+            <div class="atencionClienteContenido">
+                <!-- Enlaces a soporte y accesibilidad -->
+                <a href="">Contacto</a>
+                <a href="">Centro de ayuda</a>
+                <a href="">Accesibilidad</a>
+            </div>
+        </section>
+    </footer>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
-
-
     <script src="app.js"></script>
 </body>
 

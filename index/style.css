@@ -5,6 +5,7 @@
     font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI';
 }
 
+/* Variables de css*/
 :root {
     --color-primary: #a68160;
     --color-secondary: #f2f2f2;
@@ -12,32 +13,47 @@
     --color-black: black;
 }
 
+/* inicia la secion de bienvenida */
 .sectionBienvenida {
     height: 100vh;
+    /* 100% del viewport pantalla */
     background-color: var(--color-primary);
+    /* Color de fondo */
     display: grid;
+    /* Grid para alinear elementos */
     grid-template-columns: 1fr 1fr;
+    /* Dos columnas */
 }
 
 .bienvenidaIzquierda {
     color: var(--color-white);
+    /* Color de texto */
     display: grid;
+    /* Grid para alinear elementos de forma vertical*/
     max-width: 100%;
     /* Evita que crezca demasiado */
     overflow: hidden;
     /* Oculta cualquier desbordamiento */
     position: relative;
+    /* Para posicionar elementos hijos */
     z-index: 1;
+    /* Por encima de otros elementos */
     padding: 1em 3em;
+    /* Espaciado interno */
+    cursor: pointer;
+    /* Cambia el cursor al pasar por encima */
 
 
     .bombilla {
-        width: 3em;
+        font-size: 4.3em;
+        /* Tamaño de la fuente (icono bombilla) */
     }
 
+    /* contenedor de textos y botones dentro de bienvenidaIzquierda*/
     .textoBienvenida {
         display: grid;
         gap: 1em;
+        /* Espacio entre elementos */
 
         h3 {
             font-size: 2.6em;
@@ -67,6 +83,7 @@
             }
 
             button:hover {
+                /* Efecto al pasar el mouse */
                 border: 2px solid var(--color-secondary);
                 background-color: var(--color-primary);
                 color: var(--color-secondary);
@@ -74,6 +91,7 @@
         }
     }
 
+    /* contenedor de redes sociales apiladas verticalmente por grid*/
     .redesSociales {
         display: grid;
         align-items: center;
@@ -81,8 +99,9 @@
         grid-template-rows: 1fr 1fr 1fr;
         gap: 1em;
 
-        img {
-            width: 2em;
+        /* iconos de las redes */
+        i {
+            font-size: 2.1em;
         }
     }
 }
@@ -91,17 +110,18 @@
     font-size: 1.9em;
 }
 
-
+/* contenedor derecho en el caul cambian las imagenes*/
 .bienvenidaDerecha {
     width: 100%;
-    /* Ajusta según necesidad */
     height: 100%;
-    /* O lo que prefieras */
-    background-size: cover;
-    background-position: center;
-    transition: background-image 1s ease-in-out;
+    background-size: cover; /* Ajusta la imagen al contenedor */
+    background-position: center; /* Centra la imagen */
+    transition: background-image 1s ease-in-out; /* Transición suave */
 }
+/* FIN DE LA SECCION BIENVENIDA */
 
+
+/* INICIO DE LA SECCION DE SERVICIOS*/
 .servicios {
     text-align: center;
     display: grid;
@@ -120,20 +140,21 @@
         font-size: 1.5em;
     }
 
-    .contenedorServiciosImgs {
-        display: flex;
+    .contenedorServiciosImgs { /* Contenedor de tarjetas */
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
         justify-content: center;
         gap: 15px;
     }
 
-    .contenedorSeccionEstablecimientos {
+    .contenedorSeccionServicios { /* Contenedor de tarjetas */
         display: grid;
         gap: 2em;
         padding: 4em 0;
     }
 
-    .servicioCard {
-        width: 20em;
+    .servicioCard { /* Tarjeta de servicio */
+        width: 18em;
         height: 280px;
         overflow: hidden;
         border-radius: 10px;
@@ -158,32 +179,28 @@
         bottom: 0;
         width: 100%;
         text-align: center;
-        background: rgba(131, 131, 131, 0.6);
-        /* Fondo oscuro semitransparente */
+        background: var(--color-primary);
         color: white;
         padding: 8px;
         margin: 0;
-        font-size: 1rem;
+        font-size: 1.3em;
         font-weight: bold;
     }
 
-    /* Efecto al pasar el mouse */
-    .servicioCard:hover {
+    
+    .servicioCard:hover { /* Efecto al pasar el mouse */
         transform: scale(1.1) translateY(-10px);
         box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
     }
 
     /* Blur a las otras tarjetas cuando una está en hover */
-    .contenedorServiciosImgs:hover .servicioCard:not(:hover) {
-        filter: blur(1px);
-        /* Aplica desenfoque a las demás */
+    .contenedorServiciosImgs:hover .servicioCard:not(:hover) {/* Aplica desenfoque a las demás */
         transform: scale(0.9);
-        opacity: 0.5;
-        /* Opcional para dar más efecto */
+        opacity: 0.2;
     }
 
-    /* Borde animado */
-    .servicioCard::after {
+    
+    .servicioCard::after { /* Borde animado */
         content: "";
         position: absolute;
         inset: 0;
@@ -192,58 +209,319 @@
         transition: border-color 0.3s ease-in-out;
     }
 
-    .servicioCard:hover::after {
+    .servicioCard:hover::after { /* Efecto al pasar el mouse */
         border-color: var(--color-primary, #c59b6d);
     }
 }
+/* FIN DE LA SECCION DE SERVICIOS*/
 
 
-.establecimientosRecomendados {
+
+
+/* INICIO DE LA SECCION DE ESTABLECIMIENTOS RECOMENDADOS*/
+
+.establecimientosRecomendados { /* Sección de establecimientos recomendados */
+    padding: 5em 3em;
     display: grid;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    gap: 2em;
 
 
-    .contenedorImagenesDestacado {
+    .contenedorImagenesDestacado { /* Contenedor de tarjetas */
+        grid-template-columns: 1fr 1fr 1fr; /* 3 columnas */
+        display: grid;
+        padding-top: 3em;
+        gap: 2em;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .cardDestacado { /* Tarjeta */
+        width: 20em;
+        height: 300px;
+        border-radius: .7em .7em 0 0;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        position: relative;
+        background: white;
+        overflow: hidden; /* Oculta contenido extra */
+        border: 2px solid var(--color-primary);
+    }
+
+    .cardDestacado:nth-child(2) {
+        transform: translateY(-45px); /* Sube la tarjeta del medio */
+    }
+
+    .cardDestacado img.destacadoImagen { /* Imagen dentro de la tarjeta */
+        width: 100%;
+        height: 83.4%;
+        object-fit: cover; /* Ajusta la imagen */
+        display: block; /* Elimina espacio extra */
+        border-radius: .7em .7em 0 0;
+    }
+
+    .nombrePosicion { /* Texto dentro de la tarjeta */
+
+        background: var(--color-primary);
         display: flex;
-        gap: 3em;
+        justify-content: center;
+        align-items: center;
+        padding: .5em 0;
+        gap: 0.5em;
+    }
+
+    .nombrePosicion h4 { /* Nombre del establecimiento */
+        margin: 0;
+        font-size: 1.4em;
+        font-weight: bold;
+        color: var(--color-secondary);
+    }
+
+    .nombrePosicion img { /* Icono de posición */
+        width: 2em;
+        height: auto;
+    }
+
+    /* Efecto al pasar el mouse */
+    .cardDestacado:hover {
+        transform: scale(1.05) translateY(-5px);
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+}
+/* FIN DE LA SECCION DE ESTABLECIMIENTOS RECOMENDADOS*/
+
+
+/* INICIO DE FOOTER*/
+footer {
+    background-color: var(--color-primary);
+    height: 100%;
+    margin-top: 5em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    color: var(--color-secondary);
+
+    a {
+        color: var(--color-secondary);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1.1em;
+    }
+    
+    /*contenedor 1 footer */
+    .sobreNosotros {
+        display: grid;
+        gap: 1em;
+        padding: 2em;
+        align-items: center;
+        justify-content: center;
+
+        .sobreNosotrosContenido {
+            display: grid;
+
+        }
+
+        .redes {
+            display: flex;
+            gap: 1em;
+
+            .icon {
+                font-size: 2em;
+            }
+        }
+    }
+    
+    /*contenedor 2 footer */
+    .sta {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2em;
+
+        .logoFooter {
+            font-size: 3em;
+        }
+
+        h2 {
+            font-size: 2.5em;
+        }
+    }
+
+    /*contenedor 3 footer */
+    .atencionCliente {
+        display: grid;
+        gap: 1em;
+        padding: 2em;
+        align-items: center;
+        justify-content: center;
+
+        .atencionClienteContenido {
+            display: grid;
+        }
+    }
+}
+/* FIN DE FOOTER*/
+
+
+
+
+@media (max-width: 1244px) {
+    .sectionBienvenida {
+        height: 100vh;
+        background-color: var(--color-primary);
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    #bienvenidaIzquierda {
+                /* hacemos que el contenedor ocupe ahora el 100% de el encho de pantalla */
+
+        width: 100%;
+        /* minimizamos el tamaño de fuente y ancho de etiquetas */
+        .textoBienvenida {
+            display: grid;
+            gap: 1em;
+
+            h3 {
+                font-size: 2.6em;
+            }
+
+            h1 {
+                font-size: 5em;
+            }
+
+            p {
+                font-size: 1.4em;
+                max-width: 80%;
+            }
+
+        }
+    }
+
+    .bienvenidaDerecha {
+        /*ocultaremos el contenedor derecha, por lo tanto a partir de pantallas medianas ya no se mostraran las imagenes */
+        display: none;
+    }
+
+
+/* minimizamos el tamaño de fuente y ancho de etiquetas para mejorar la visualizacion y evitar rompiemientos */
+    .servicios {
+        gap: 1em;
+        padding: 5em 3em;
+
+        h2 {
+            font-size: 3em;
+        }
+
+        p {
+            font-size: 1.3em;
+        }
+
+        .contenedorServiciosImgs {
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5em;
+        }
+
+
+        .contenedorSeccionServicios {
+            display: grid;
+            padding: 4em 0;
+        }
+
+        .servicioCard {
+            width: 100%;
+            height: 285px;
+        }
+    }
+
+
+
+    .establecimientosRecomendados {
+        gap: 2em;
+
+        .contenedorImagenesDestacado {
+            grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+            grid-template-rows: auto auto; /* Dos filas automáticas */
+            padding-top: 3em;
+            gap: 2em;
+            justify-content: center;
+
+            .cardDestacado {
+                width: 21em;
+                height: 300px;
+            }
+        }
+
+        .cardDestacado:nth-child(2) {
+            grid-column: span 2; /* Ocupa las 2 columnas */
+            grid-row: 1; /* Se mantiene en la primera fila */
+            justify-self: center; /* Centrar horizontalmente */
+            align-self: center; /* Centrar verticalmente */
+            transform: translateY(0px); /* Vuelve a la posición original */
+        }
+
+        .cardDestacado:nth-child(1) {
+            grid-column: 1; /* Primera columna */
+            grid-row: 2; /* Segunda fila */
+            justify-self: flex-end; /* derecha */
+        }
+
+        .cardDestacado:nth-child(3) {
+            grid-column: 2; /* Segunda columna */
+            grid-row: 2; /* Segunda fila */
+            justify-self: flex-start; /* izquierda */
+        }
+    }
+
+
+    footer {
+        .sta {
+            /* dentro del contenedor sta apilaremos su contenido*/
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            padding: 2em;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1em;
+            place-content: center;
+
+            .contenedorLogoFooter {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 1em;
+            }
+        }
+    }
+
+}
+
+/* resoluciones de pantalla muy pequeñas */
+@media (max-width: 810px) {
+    .establecimientosRecomendados {
+        gap: 2em;
+
+        .contenedorImagenesDestacado {
+            display: flex;
+            flex-direction: column; /* Asegura que los elementos estén en columna */
+            align-items: center;
+            padding-top: 3em;
+            gap: 2em;
+        }
 
         .cardDestacado {
-            width: 20em;
-            height: 280px;
-            border-radius: .7em .7em 0  0 ;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-            position: relative;
+            width: 100%; /* Ocupan todo el ancho disponible */
+            max-width: 20em; /* Mantiene tamaño */
+            height: 300px;
 
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                display: block;
-                transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
-                border-radius: .7em .7em 0  0 ;
+        }
 
-            }
-
-            h4 {
-                bottom: 0;
-                width: 100%;
-                text-align: center;
-                background: var(--color-primary);
-                /* Fondo oscuro semitransparente */
-                color: var(--color-secondary);
-                padding: 8px;
-                margin: 0;
-                font-size: 1rem;
-                font-weight: bold;
-            }
-
-            /* Efecto al pasar el mouse */
-            .cardDestacado:hover {
-                transform: scale(1.1) translateY(-10px);
-                box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
-            }
+        .cardDestacado:hover { /* Efecto al pasar el mouse */
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
         }
     }
 }
