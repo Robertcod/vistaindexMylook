@@ -1,0 +1,643 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* VARIABLES DE ENTORNO */
+:root {
+    --color-background: #624023;
+    --color-primary: #a68160;
+    --color-dark: #795434;
+    --color-white: white;
+    --color-black: black;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden ;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    .configAdmi{
+        border: 1px solid black;
+        height: 86%;
+        width: 55%;
+        display: grid;
+        grid-template-columns: 35% 1fr;
+        grid-template-rows: 1fr;
+
+
+        .navConfig{
+            background-color: var(--color-primary);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; 
+            align-items: center;
+            height: 85.7vh;
+
+            .imgContainer {
+                border-bottom: 1px solid var(--color-white);
+                height: 38%;
+                width: 75%;
+                margin: 2% 1% 1% 1%;
+                display: flex;
+                justify-content: center;
+                align-items: end;
+                position: relative;
+              }
+              
+              .imgPerfil {
+                border: 2px solid var(--color-white);
+                margin-bottom: 3vh;
+                height: 19vh;
+                width: 9vw;
+                border-radius: 100%;
+                object-fit: cover;
+              }
+              
+              .changePhotoButton {
+                position: absolute;
+                bottom: 8%;
+                right: 30%;
+                background-color: var(--color-white);
+                color: var(--color-primary);
+                border: none;
+                border-radius: 50%;
+                padding: 6px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              }
+              
+              i {
+                font-size: 14px; /* Tamaño del ícono */
+              }
+              
+              .changePhotoButton:hover {
+                background-color: rgba(0, 0, 0, 0.8);
+              }
+              
+
+            .navOptions{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 45%;
+                width: 75%;
+                margin-bottom: 1.5vh;
+
+                .listaNav{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    .optionNav{
+                        height: 5vh;
+                        width: 15vw;
+                        background-color: transparent;
+                        border: none;
+                        color: var(--color-white);
+                        font-weight: bold;
+                        cursor: pointer;
+
+                        &:active{
+                            background-color: var(--color-background);
+                            opacity: .5;
+                            color: var(--color-white);
+                            width: 19.1vw;
+                        }
+                        
+                    }
+                }
+            }
+
+            .nomApp{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 2vh;
+
+                .tittle{
+                    color: var(--color-white);
+                    font-size: 4vw;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .optionsConfig{
+            display: flex;
+            flex: 1;
+          
+
+            .configPerfil{
+                height: 100%; 
+                width: 85%;
+                display: flex;
+                flex-direction: column; 
+                justify-content: space-evenly;
+                align-items: start;
+                margin: 8% 3% 2% 6% ;
+
+                .nomForm{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.5vh;
+
+                    .tittleForm{
+                        font-size: 1.6vw;
+                    }
+
+                    .descripConfig{
+                        font-size: .9vw;
+                        width: 100%;
+                        color: rgb(127, 125, 125);
+                    }
+                }
+
+
+                .datosPersonales{
+                    display: flex;
+
+                    .groupInputs{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: start;
+                        gap: .5vh;
+                    }
+
+                    .inputNombre{ 
+                        height: 5vh;
+                        width: 105%;
+                        border: 1px solid var(--color-dark);
+                        border-radius: 3%;
+                        outline: none;
+                        padding-left: 1vw;
+                    }
+                    
+                    .inputApellido{
+                        height: 5vh;
+                        width: 105%;
+                        border: 1px solid var(--color-dark);
+                        border-radius: 3%;   
+                        margin-left: 2vw;
+                        outline: none;
+                        padding-left: 1vw;
+
+                    } 
+
+                    .Apellido{
+                        margin-left: 2.1vw;
+                    }
+                }
+            }
+
+            .datosUnico{
+                display: flex;
+                justify-content: center;
+                align-items: start;
+                flex-direction: column;
+                gap: .5vw;
+                margin-top: 3vh;
+
+                .inputDocumento{
+                    height: 5vh;
+                    width: 32vw;
+                    border: 1px solid var(--color-dark);
+                    border-radius: 3%;
+                    outline: none;
+                    padding-left: 1vw;
+                }
+            }
+
+            .datosContact{
+                display: flex;
+                justify-content: center;
+                align-items: start;
+                flex-direction: column;
+                gap: 1vh;
+
+                .inputCorreo{
+                    height: 5vh;
+                    width: 32vw;
+                    border: 1px solid var(--color-dark);
+                    border-radius: 3%;
+                    outline: none;
+                    padding-left: 1vw;
+
+                }
+
+                .inputTelefono{
+                    height: 5vh;
+                    width: 32vw;
+                    border: 1px solid var(--color-dark);
+                    border-radius: 3%;
+                    outline: none;
+                    padding-left: 1vw;
+                }
+            }
+
+            .datoPassword{
+                display: flex;
+                justify-content: center;
+                align-items: start;
+                flex-direction: column;
+                gap: 1vh;
+
+                .resetPassword{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 1vw;
+
+
+                    .inputPassword{
+                        height: 5vh;
+                        width: 26vw;
+                        border: 1px solid var(--color-dark);
+                        border-radius: 3%;
+                        outline: none;
+                        padding-left: 1vw;
+                    }
+
+                    .resetRedirect{
+                        text-decoration: none;
+                        color: var(--color-dark);
+                        font-size: .9vw;
+                    }
+                }
+            }
+
+            .btnCrud{ 
+                margin-top: 3vh;
+                width: 105%;
+                
+                .groupBtn{
+                    display: flex;
+                    justify-content: right;
+                    align-items: end;
+                    gap: .5vw;
+                    padding-top: 3vh;   
+                 
+
+                    .btnCrud{
+                        height: 6vh;
+                        width: 10vw;
+                        background-color: transparent;
+                        border: 1px solid var(--color-primary);
+                        border-radius: 5%;
+                        color: var(--color-primary);
+                        cursor: pointer;
+                    }
+
+                    .btnSave{
+                        background-color: var(--color-primary);
+                        color: var(--color-white);
+                    }
+                }
+            }
+        }
+    }
+
+    .configEstablecimiento{
+        height: 100%; 
+        width: 85%;
+        display: flex;
+        flex-direction: column; 
+        justify-content: space-evenly;
+        align-items: start;
+        margin: 1% 3% 2% 6%;
+        
+        .nomForm{
+            display: flex;
+            flex-direction: column;
+            gap: 1.5vh;
+            margin-top: 4vh;
+
+            .tittleForm{
+                font-size: 1.6vw;
+            }
+
+            .descripConfig{
+                font-size: .9vw;
+                width: 100%;
+                color: rgb(127, 125, 125);
+            }
+        }
+
+        .labelInputEstablecimiento{
+            margin-right: .5vw;
+            font-size: 1vw;
+        }
+
+        .datosNumericos{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2vh;
+
+            .inputId{
+                height: 5vh;
+                width: 16vw;
+                border: 1px solid var(--color-dark);
+                border-radius: 3%;
+                outline: none;
+                margin-top: 2vh;
+                padding-left: 1vw;
+            }
+        
+        }
+
+        .datosShearch{
+            display: flex;
+            justify-content: center;    
+            align-items: start;
+            margin-top: 2vh;
+
+
+            .groupInputs{
+                display: flex;
+                flex-direction: column;
+                margin-right: 1vw;
+            }
+
+            .inputNombre{
+                height: 5vh;
+                width: 100%;
+                border: 1px solid var(--color-dark);
+                border-radius: 3%;
+                outline: none;
+                padding-left: 1vw;
+            }
+
+            .inputDireccion{
+                height: 5vh;
+                width: 100%;
+                border: 1px solid var(--color-dark);
+                border-radius: 3%;
+                outline: none;
+                padding-left: 1vw;
+            }
+        }
+
+        .datosDescriptivos{
+            display: flex;
+            justify-content: center;
+            align-self: start;
+            gap: 1vw;
+            margin-top: 2vh;
+
+
+            .inputDescripcion{
+                height: 20vh;
+                width: 21.5vw;
+                border: 1px solid var(--color-dark);
+                border-radius: 3%;
+                outline: none;
+                padding-left: 1vw;
+                padding-top: 1vh;
+                resize: none;
+            }
+        }
+
+        .datosTel{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2vh;
+
+            .inputTel{
+                height: 5vh;
+                width: 24vw;
+                border: 1px solid var(--color-dark);
+                border-radius: 3%;
+                outline: none;
+                padding-left: 1vw;
+            }
+        }
+
+        .datosEmail{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2vh;
+
+
+            .inputEmail{
+                height: 5vh;
+                width: 24vw;
+                border: 1px solid var(--color-dark);
+                border-radius: 3%;
+                outline: none;
+                margin-left: .8vw;
+                padding-left: 1vw;
+            }
+        }
+
+        &::placeholder{
+            color: rgb(127, 125, 125);
+            font-style: italic;
+        }
+
+           
+            .btnCrud{ 
+                width: 105%;
+                
+                .groupBtn{
+                    display: flex;
+                    justify-content: right;
+                    align-items: end;
+                    gap: .5vw;
+                    margin-right: 2vw;  
+                    margin-top: -3vh;
+                 
+                    .btnCrud{
+                        height: 6vh;
+                        width: 10vw;
+                        background-color: transparent;
+                        border: 1px solid var(--color-primary);
+                        border-radius: 5%;
+                        color: var(--color-primary);
+                        cursor: pointer;
+                    }
+
+                    .btnSave{
+                        background-color: var(--color-primary);
+                        color: var(--color-white);
+                    }
+                }
+            }
+    }
+
+    .configCuenta{
+        height: 100%; 
+        width: 100%;
+        display: flex;
+        flex-direction: column; 
+        justify-content: space-evenly;
+        align-items: start;
+
+        .labelInputNegocio{
+            font-size: 1vw;
+        }
+
+        .imgsNegocio{
+            height: 36%;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 80% 1fr;
+
+            .imgPresentacion{
+                height: 100%;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: var(--color-dark);
+
+
+                .presentacion{
+                    height: 100%;
+                    width: 100%;
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    opacity: .4;
+                }
+            }
+        }
+
+            .imgLogo{
+                display: grid;
+                grid-template-columns: 65% 1fr;
+                grid-template-rows: 1fr;
+
+                .logo{
+                    border: 2px solid var(--color-primary);
+                    height: 20vh;
+                    width: 10vw;
+                    border-radius: 100%;
+                    margin-top: -10vh;
+                    z-index: 2;
+                    background-color: var(--color-dark);
+                }
+
+                .fechCreacion{
+                    font-size: .7vw;
+                    padding-top: .5vh;
+                    padding-left: .5vw;
+                }
+            }
+
+            .infoNegocio{
+                margin-top: 5vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: .5vw;
+
+                .inputId{
+                    height: 5vh;
+                    width: 26vw;
+                    border: 1px solid var(--color-dark);
+                    border-radius: 3%;
+                    outline: none;
+                    padding-right:  1vw;
+                    text-align: right;
+                }
+            }
+
+            .infoPublica{
+                margin-top: 2vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: .5vw;
+
+                .inputNombre{
+                    height: 5vh;
+                    width: 28.3vw;
+                    border: 1px solid var(--color-dark);
+                    border-radius: 3%;
+                    outline: none;
+                    padding-right: 1vw;
+                    text-align: right;
+                }
+            }
+
+            .infoDesciptiva{
+                margin-top: 2vh;
+                display: flex;
+                justify-content: center;
+                align-items: start;
+                gap: .5vw;
+
+                .inputDescrip{
+                    resize: none;
+                    height: 5vh;
+                    width: 27vw;
+                    border: 1px solid var(--color-dark);
+                    border-radius: 3%;
+                    outline: none;
+                    padding-right: 1vw;
+                    text-align: right;
+                }
+            }
+
+            .infoPrivada{
+                margin-top: 2vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: .5vw;
+
+                .inputLider{
+                    resize: none;
+                    height: 5vh;
+                    width: 23.5vw;
+                    border: 1px solid var(--color-dark);
+                    border-radius: 3%;
+                    outline: none;
+                    padding-right: 1vw;
+                    text-align: right;
+                }  
+            }
+   
+            .btnCrud{ 
+                width: 105%;
+                
+                .groupBtn{
+                    display: flex;
+                    justify-content: right;
+                    align-items: end;
+                    gap: .5vw;
+                    margin-right: 3vw;  
+                 
+                    .btnCrud{
+                        height: 6vh;
+                        width: 10vw;
+                        background-color: transparent;
+                        border: 1px solid var(--color-primary);
+                        border-radius: 5%;
+                        color: var(--color-primary);
+                        cursor: pointer;
+                    }
+
+                    .btnSave{
+                        background-color: var(--color-primary);
+                        color: var(--color-white);
+                    }
+                }
+            }
+        }
+    }
+
