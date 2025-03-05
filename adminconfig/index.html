@@ -1,265 +1,225 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('Css/Config/configAdmin.css') }}">
-    <title>Configuración Administrador - MiNgeocio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Configuración MiNegocio - MYLOOK</title>
 </head>
 
 <body>
-    <main>
-        <section class="configuracionAdministrador">
-
-            <aside class="navegacion">
-
-                <figure class="contenedorImagen">
-                    <form action="" method="POST" enctype="multipart/form-data">
-                        <img src="" alt="" class="imgPerfil" id="profileImage">
-                        <label for="fileInput" class="changePhotoButton">
-                            <i class="fa fa-camera"></i>
-                        </label>
-                        <input type="file" name="imgPerfil" id="fileInput" accept="image/*" style="display: none;"
-                            enctype="multipart/form-data">
-                    </form>
-                </figure>
-
-                <nav class="opciones">
-                    <ul class="listaNavegacion">
-                        <button type="button" class="optionNav" data-target=".configPerfil">Configurar Perfil</button>
-                        <button type="button" class="optionNav" data-target=".configEstablecimiento">Configurar
-                            Establecimiento</button>
-                        <button type="button" class="optionNav" data-target=".configCuenta">Configurar Cuenta</button>
-                        <button type="button" class="optionNav" data-target=".cerrarSesion">Cerrar Sesión</button>
-                    </ul>
-                </nav>
-
-                <span class="myLook">
-                    <h1 class="titulo">MYLOOK</h1>
-                </span>
-
-            </aside>
-
-            <seccion class="opcionesConfiguracion">
-
-                <!--            FORMUALRIO QUE SE VISUALIZA UNA VEZ SE ENTRA A CONFIGURAR EL INDEX ADMIN -->
-                <section class="seccionPorDefecto" id="seccionDefault" enctype="multipart/form-data">
-                    @csrf
 
 
+  <aside class="navegacion">
+    <img
+      src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2224%22%20height=%2224%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22white%22%20stroke-width=%222%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%3E%3Cpath%20stroke=%22none%22%20d=%22M0%200h24v24H0z%22%20fill=%22none%22/%3E%3Cpath%20d=%22M10%208v-2a2%202%200%200%201%202%20-2h7a2%202%200%200%201%202%202v12a2%202%200%200%201%20-2%202h-7a2%202%200%200%201%20-2%20-2v-2%22/%3E%3Cpath%20d=%22M15%2012h-12l3%20-3%22/%3E%3Cpath%20d=%22M6%2015l-3%20-3%22/%3E%3C/svg%3E"
+      class="iconoSalir" alt="icono">
 
-                    <article class="introduccionConfiguracion">
-                        <div class="tituloIntroduccion">
-                            <h2 class="nombreConfiguracion">Configuración de MiNegocio</h2>
-                            <p class="descripcionConfiguracion">En este apartado podras ilustar tu negocio
-                                y comercializar tus productos para entrar a la familia MyLook.
-                            </p>
-                        </div>
-                    </article>
+    <div class="mensajeBienvenida">
+      <h3>Bienvenido</h3>
+      <h1>Ramiro vasquez</h1>
+    </div>
 
-                    <article class="informacionConfiguracion">
-                        <ul class="acciones">
-                            <li class="accion">Configurar perfil administrador</li>
-                            <li class="accion">Configurar perfil del establecimiento</li>
-                            <li class="accion">Configuracion de cuenta</li>
-                            <li class="accion">Configuracion de la imagen de presentacion</li>
-                            <li class="accion">Configuracion del logo de negocio</li>
-                            <li class="accion">Configuracion de foto de perfil admin</li>
-                        </ul>
-                    </article>
+    <!-- aqui se deberia de mostrar la foto de perfil de el administrador en caso de que la tenga -->
+    <figure class="contenedorImagen">
+      <img src="https://filestore.community.support.microsoft.com/api/images/3ac075ba-65ca-4901-9702-862868564dfd?upload=true"
+        alt="" />
+    </figure>
 
-                    <article class="nota">
-                        <p class="tituloNota">
-                            <strong>Consejo:</strong>
-                            Los registros que se hagan en este apartado
-                            seran reflejados en las interfaz
-                            en las que interactuar los usuarios recomendiacion toamrse serio el proceso de
-                            comercializacion de tu establecimiento
-                        </p>
-                    </article>
-
-                    <div class="contenedorBoton">
-                        <button type="submit" class="botonContinuar">Continuar</button>
-                    </div>
-
-
-                </section>
-
-                <!--FORMULARIO DONDE SE PUEDE EDITAR LA INFORMACION DEL PERFIL DEL ADMINISTRADOR -->
-                <form action="" method="POST" class="configPerfil" id="configuracionPerfil"
-                    enctype="multipart/form-data">
-                    @csrf
-
-                    <article class="informacionFormulario">
-                        <h3 class="tituloFormulario">Configuración del perfil administrador</h3>
-                        <p class="descripcionConfiguracion">Bienvenido al panel de Configuración del administrador donde
-                            podras cambiar tus datos personales cuando desees y estar actalizado.
-                        </p>
-                    </article>
+    <!--            FORMUALRIO QUE SE VISUALIZA UNA VEZ SE ENTRA A CONFIGURAR EL INDEX ADMIN -->
+    <article class="introduccionConfiguracion">
+      <div class="tituloIntroduccion">
+        <h2 class="nombreConfiguracion">Configuración Mi Negocio</h2>
+        <p class="descripcionConfiguracion">
+          En este apartado tendras las opciones para crear y configurar tu
+          negocio. ¡Cada paso que das te acerca al éxito!
+        </p>
+      </div>
+      <article class="nota">
+        <p class="tituloNota">
+          <strong>Consejo:</strong>
+          La información registrada en este apartado definirá la presencia de tu negocio en la plataforma y
+          será visible
+          para los usuarios. Te recomendamos completar los datos con precisión, ya que representan tu
+          establecimiento y
+          perfil comercial.
+        </p>
+      </article>
+    </article>
 
 
+  </aside>
 
-                    <div class="informacionInput">
-                        <p class="nombreInput">DOCUMENTO</p>
-                        <input type="text" class="inputDocumento" name="docuAdmin">
-                    </div>
+  <main>
+    <section class="configuracionAdministrador">
+      <!--FORMULARIO DONDE SE PUEDE EDITAR LA INFORMACION DEL PERFIL DEL ADMINISTRADOR -->
+      <form action="{{ route('registerUserAdmin') }}" method="POST" class="configuracionPerfil formulario active"
+        id="form1" enctype="multipart/form-data" >
+        @csrf
+        <h2 class="tituloPrincipal">CONFIGURACION PERFIL</h2>
 
-                    <div class="informacionInput">
-                        <p class="nombreInput">NOMBRE</p>
-                        <input type="text" class="inputNombre" name="nombreAdmin">
-                    </div>
-
-                    <div class="informacionInput">
-                        <p class="nombreInput">APELLIDO</p>
-                        <input type="text" class="inputApellido" name="apellidoAdmin">
-                    </div>
-
-                    <div class="informacionInput">
-                        <p class="nombreInput">CORREO</p>
-                        <input type="text" class="inputCorreo" name="correoAdmin">
-                    </div>
-
-                    <div class="informacionInput">
-                        <p class="nombreInput">TELEFONO</p>
-                        <input type="text" class="inputTelefono" name="TelefonoAdmin">
-                    </div>
-
-                    <div class="informacionInput">
-                        <p class="nombreInput">CONTRASEÑA</p>
-                        <input type="text" class="inputPassword" name="contrasenaAdmin">
-                            <a href="http://" class="resetRedirect">Cambiar</a>
-                    </div>
-
-                    <div class="contenedorBoton">
-                        <button type="submit" class="botonContinuar">Continuar</button>
-                    </div>
-                </form>
-
-                <!--FORMULARIO DONDE SE PUEDE EDITAR LA INFORMACION DEL PERFIL DEL ESTABLECIMIENTO -->
-                <form action="" method="POST" class="configEstablecimiento" id="configEstablecimientotyle"
-                    enctype="multipart/form-data">
-                    @csrf
-
-                    <article class="informacionFormulario">
-                        <h3 class="tituloFormulario">Configuración del establecimiento</h3>
-                        <p class="descripcionConfiguracion">Bienvenido al panel de Configuración del establecimiento donde
-                            podras cambiar los datos personales de la sede cuando desees y estar actalizado.
-                        </p>
-                    </article>
+        <p>
+          En este apartado podrás modificar tu información personal de forma
+          fácil y rápida. Esto te permitirá mantener tus datos actualizados
+          en todo momento
+        </p>
 
 
-                    <div class="informacionInput">
-                        <p class="nombreInput">NIT NEGOCIO</p>
-                        <input type="text" class="inputId" name="idNegocio">
-                    </div>
+        <section class="formularioPerfil">
+          <div class="informacionInput">
+            <p class="nombreInput">DOCUMENTO</p>
+            <input type="number" class="inputDocumento" name="idAdmin">
+          </div>
 
-                    <div class="informacionInput">
-                        <p class="nombreInput">NOMBRE</p>
-                        <input type="text" class="inputNombre" name="nombreEstablecimiento">
-                    </div>
+          <div class="informacionInput">
+            <p class="nombreInput">NOMBRE</p>
+            <input type="text" class="inputNombre" name="nombreAdmin">
+          </div>
 
-                    <div class="informacionInput">
-                        <p class="nombreInput">DIRECCION</p>
-                        <input type="text" class="inputDireccion" name="direccionEstablecimiento">
-                    </div>
+          <div class="informacionInput">
+            <p class="nombreInput">APELLIDO</p>
+            <input type="text" class="inputApellido" name="apellidoAdmin">
+          </div>
 
-                    <div class="inforInput">
-                        <p class="nombreInput">DESCRIPCION</p>
-                        <textarea id="descripcionServicio" name="descripEstablecimiento" rows="5" maxlength="90"></textarea>
-                    </div>
+          <div class="informacionInput">
+            <p class="nombreInput">CORREO</p>
+            <input type="text" class="inputCorreo" name="correoAdmin">
+          </div>
 
-                    <article class="datosTel">
+          <div class="informacionInput">
+            <p class="nombreInput">TELEFONO</p>
+            <input type="number" class="inputTelefono" name="telefonoAdmin">
+          </div>
 
-                        <label for="" class="labelInputEstablecimiento">Telefono</label>
-                        <input type="text" class="inputTel" name="telefonoEstablecimiento">
+          <figure>
+            <input type="file" name="imagenPerfil" id="fileInput" accept="image/*" />
+            <img id="previsualizacionImagen" src="" alt="" />
+          </figure>
+          
 
-                    </article>
-
-                    <article class="datosEmail">
-
-                        <label for="" class="labelInputEstablecimiento">Correo</label>
-                        <input type="text" class="inputEmail" name="correoEstablecimiento">
-
-                    </article>
-
-
-                    <article class="btnCrud">
-                        <div class="groupBtn">
-                            <button type="submit" class="btnCrud">Cancelar</button>
-                            <button type="submit" class="btnCrud btnSave">Guardar</button>
-                        </div>
-                    </article>
-
-                </form>
-
-                <!--             FORMULARIO DONDE SE PUEDE EDITAR LA INFORMACION DEL PERFIL DEL NEGOCIO ( ESTO SOLO PDRA SER EDITADO SI EL ADMIN LIDER INICIE SESION ) -->
-                <form action="" method="POST" class="configCuenta" id="configCuenta" style="display: none;"
-                    enctype="multipart/form-data">>
-                    @csrf
-
-
-                    <article class="imgsNegocio">
-
-                        <figure class="imgPresentacion">
-                            <img src="https://a1.elespanol.com/metropoliabierta/2021/11/15/vivir-en-barcelona/627447264_9828444_1024x576.jpg"
-                                alt="imagen presentacion" class="presentacion">
-
-                            <div class="inputPresentacion">
-                                <label for="fileInput" class="redirectEditar">
-                                    <span class="nomEditar">Editar</span>
-                                    <i class="fas fa-arrow-right-from-bracket"></i>
-                                </label>
-                                <input type="file" id="fileInput" name="imgPresentacion" class="input-file-hidden"
-                                    accept="image/*">
-                            </div>
-                        </figure>
-
-                        <figure class="imgLogo">
-                            <p class="fechCreacion"><strong>Fecha creación:</strong> 28 novimenbre 2023 </p>
-                            <img src="https://preview.redd.it/barber-logo-v0-2bikmha9gpub1.jpg?width=1024&format=pjpg&auto=webp&s=63c6631438949b47df1486c3cca1049583ebb08e"
-                                name="imgLogo" alt="imagen logo" class="logo">
-                        </figure>
-
-                    </article>
-
-                    <article class="infoNegocio">
-                        <label for="" class="labelInputNegocio">Identificacion</label>
-                        <input type="text" class="inputId" name="idNegocio">
-                    </article>
-
-                    <article class="infoPublica">
-                        <label for="" class="labelInputNegocio">Nombre</label>
-                        <input type="text" class="inputNombre" name="nombreNegocio">
-                    </article>
-
-                    <article class="infoDesciptiva">
-                        <label for="" class="labelInputNegocio">Descripción</label>
-                        <textarea name="descripcionNegocio" id="" class="inputDescrip"></textarea>
-                    </article>
-
-                    <article class="infoPrivada">
-                        <label for="" class="labelInputNegocio">Administrador Lider</label>
-                        <input type="text" class="inputLider" name="nombreAdmin">
-                    </article>
-
-
-
-                    <article class="btnCrud">
-                        <div class="groupBtn">
-                            <button type="submit" class="btnCrud">Cancelar</button>
-                            <button type="submit" class="btnCrud btnSave">Guardar</button>
-                        </div>
-                    </article>
-
-                </form>
-
-                </article>
-
+          <div class="informacionInput">
+            <p class="nombreInput">CONTRASEÑA</p>
+            <input type="text" class="inputPassword" name="contrasenaAdmin">
+          </div>
         </section>
-    </main>
-    <script src="app.js"></script>
+
+        <div class="contenedorBoton">
+          <button type="submit" class="botonContinuar">SIGUIENTE</button>
+        </div>
+      </form>
+
+      <!--FORMULARIO DONDE SE PUEDE EDITAR LA INFORMACION DEL PERFIL DEL NEGOCIO ( ESTO SOLO PDRA SER EDITADO SI EL ADMIN LIDER INICIE SESION ) -->
+      <form action="{{ route('updateNegocio', ['id' => $negocioData['id_negocio']]) }}" method="POST"
+        class="configuracionNegocio formulario" id="form2" style="display: none;">
+        @csrf
+        @method('PUT')
+        <h2 class="tituloPrincipal">CONFIGURACION NEGOCIO</h2>
+        <div class="contenedorImagen">
+          <!-- Input de imagen de fondo -->
+          <input type="file" id="inputImagenFondo" class="inputFile" accept="image/*">
+          <img id="imagenFondo" class="imagenFondo"
+            src="https://img.freepik.com/foto-gratis/sillas-vintage-peluqueria_155003-10150.jpg?t=st=1741058411~exp=1741062011~hmac=83e715b06e39d3689c7b29fdaa0eaceb0c4f6c1521f4b0fab3e020e84583ad27&w=1060"
+            alt="Imagen de fondo">
+
+          <!-- Input para el logo (imagen superpuesta) -->
+          <div class="logoNegocio">
+            <input type="file" id="inputLogo" class="inputFile" accept="image/*">
+            <img id="logo" src="https://d1yjjnpx0p53s8.cloudfront.net/logotipo-imperio-barberia-vector1.png"
+              alt="Logo del negocio">
+          </div>
+        </div>
+        <div class="formularioNegocio">
+          <div class="informacionInput">
+            <p class="nombreInput">IDENTIFICACION</p>
+            <input type="number" class="inputId" name="idNegocio" value="{{ $negocioData['id_negocio'] }}" readonly>
+          </div>
+
+
+          <div class="informacionInput">
+            <p class="nombreInput">NOMBRE</p>
+            <input type="text" class="inputNombre" name="nombreNegocio" value="{{ $negocioData['nombre_negocio'] }}"
+              readonly>
+          </div>
+
+
+          <div class="informacionInput">
+            <p class="nombreInput">DESCRIPCION</p>
+            <textarea name="descripcionNegocio" id="" cols="30" rows="1" class="inputDescrip"></textarea>
+          </div>
+
+
+          <div class="informacionInput">
+            <p class="nombreInput">ADMINISTRADOR LIDER</p>
+            <input type="text" class="inputLider" name="nombreAdmin"
+              value="{{ session('nombreAdmin') }} {{ session('apellidoAdmin') }}" readonly>
+            <!-- Aqui se muestra el nombre y el apellido del registro que se hizo en el perfil administrador sin poder editar -->
+            <input type="hidden" name="id_usuario" value="{{ session('id_usuario') }}">
+            <!-- Aqui se guarda el id_usuario -->
+          </div>
+
+        </div>
+
+        <div class="contenedorBoton">
+          <button type="submit" class="botonContinuar">INICIAR</button>
+        </div>
+      </form>
+
+      <!--FORMULARIO DONDE SE PUEDE EDITAR LA INFORMACION DEL PERFIL DEL ESTABLECIMIENTO -->
+      <form action="{{ route('registerEstablecimiento') }}" method="POST"
+        class="configuracionEstablecimiento formulario" id="form3" enctype="multipart/form-data" style="display: none;">
+        @csrf
+        <h2 class="tituloPrincipal">CONFIGURACIÓN ESTABLECIMIENTO</h2>
+
+        <p>
+          En este apartado podrás modificar los datos de la sede de forma fácil y rápida. Esto te permitirá
+          mantener la
+          información actualizada en todo momento.
+        </p>
+
+        <input type="hidden" name="idNegocio" value="{{ session('id_negocio') }}">
+
+        <section class="formularioEstablecimiento">
+          <div class="informacionInput">
+            <p class="nombreInput">NIT NEGOCIO</p>
+            <input type="number" class="inputId" name="idEstablc">
+          </div>
+
+          <div class="informacionInput">
+            <p class="nombreInput">NOMBRE</p>
+            <input type="text" class="inputNombre" name="nombreEst" id="nombre">
+          </div>
+
+          <div class="informacionInput">
+            <p class="nombreInput">DIRECCIÓN</p>
+            <input type="text" class="inputDireccion" name="direccionEstablecimiento">
+          </div>
+
+          <div class="informacionInput">
+            <p class="nombreInput">DESCRIPCIÓN</p>
+            <textarea name="descripcionEstablecimiento" id="" cols="30" rows="10" class="inputDescripcion"></textarea>
+          </div>
+
+          <div class="informacionInput">
+            <p class="nombreInput">TELÉFONO</p>
+            <input type="text" class="inputTel" name="telefonoEstablecimiento">
+          </div>
+
+          <div class="informacionInput">
+            <p class="nombreInput">CORREO</p>
+            <input type="text" class="inputEmail" name="correoEstablecimiento">
+          </div>
+        </section>
+
+        <div class="contenedorBoton">
+          <button type="submit" class="botonContinuar">SIGUIENTE</button>
+        </div>
+      </form>
+    </section>
+  </main>
+  <script src="app.js"></script>
+
 </body>
 
 </html>
