@@ -154,3 +154,11 @@ document.getElementById('fileInput').addEventListener('change', function(event) 
     }
   });
   
+// hola
+const openButton = document.getElementById('openButton');
+const myAside = document.getElementById('myAside');
+
+// Evento para abrir o cerrar el aside flotante
+openButton.addEventListener('click', () => {
+  myAside.classList.toggle('open');
+});
