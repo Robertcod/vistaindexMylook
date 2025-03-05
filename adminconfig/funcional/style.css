@@ -1,0 +1,460 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI";
+}
+
+/* Variables de css*/
+:root {
+  --color-primary: #a68160;
+  --color-secondary: #f2f2f2;
+  --color-white: white;
+  --color-black: black;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+}
+
+aside {
+  background-color: var(--color-primary);
+  position: relative;
+  /* Permite que el ícono absoluto se posicione dentro */
+  display: grid;
+  grid-template-rows: 1fr 2fr 4fr;
+  gap: 0 0 2em 0;
+  justify-content: center;
+  height: 100vh;
+  color: var(--color-white);
+  padding: 2em;
+
+  .iconoSalir {
+    position: absolute;
+    top: 10px;
+    /* Espacio desde arriba */
+    left: 10px;
+    /* Espacio desde la izquierda */
+    width: 30px;
+    /* Ajusta el tamaño del ícono */
+    height: 30px;
+    color: var(--color-secondary);
+    cursor: pointer;
+    /* Para que el ícono se vea interactivo */
+  }
+
+  .mensajeBienvenida {
+    text-align: center;
+    display: grid;
+    align-items: center;
+
+    h3 {
+      font-size: 1.5em;
+    }
+
+    h1 {
+      font-size: 2em;
+    }
+  }
+
+  figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    img {
+      width: 11em;
+      height: 11em;
+      background-position: center;
+      object-fit: cover;
+      border-radius: 100%;
+    }
+  }
+
+  .introduccionConfiguracion {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+
+    .tituloIntroduccion {
+      display: grid;
+      gap: 1em;
+    }
+  }
+}
+
+main {
+  width: 100%;
+
+  .configuracionAdministrador {
+    .configuracionPerfil {
+      display: grid;
+      grid-template-columns: 1fr;
+      /* Solo una columna */
+      grid-template-rows: auto;
+      /* Para que su contenido crezca */
+      justify-content: stretch;
+      width: 100%;
+      height: 100vh;
+      padding: 2em 3em;
+
+      .tituloPrincipal {
+        text-align: center;
+        font-size: 2.5em;
+      }
+
+      p {
+        font-size: 1.1em;
+      }
+
+      .formularioPerfil {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, auto);
+        gap: 1em;
+      }
+
+      .formularioPerfil div:nth-child(1),
+      .formularioPerfil div:nth-child(2),
+      .formularioPerfil div:nth-child(3),
+      .formularioPerfil div:nth-child(4),
+      .formularioPerfil div:nth-child(5),
+      .formularioPerfil div:nth-child(7) {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .formularioPerfil div:nth-child(1) {
+        grid-column: 1;
+        grid-row: 1;
+      }
+
+      .formularioPerfil div:nth-child(2) {
+        grid-column: 1;
+        grid-row: 2;
+      }
+
+      .formularioPerfil div:nth-child(3) {
+        grid-column: 1;
+        grid-row: 3;
+      }
+
+      .formularioPerfil div:nth-child(4) {
+        grid-column: 1;
+        grid-row: 4;
+      }
+
+      .formularioPerfil div:nth-child(5) {
+        grid-column: 1;
+        grid-row: 5;
+      }
+
+      .formularioPerfil figure:nth-child(7) {
+        grid-column: 1;
+        grid-row: 6;
+      }
+
+      .formularioPerfil figure {
+        grid-column: 2;
+        grid-row: span 4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+      
+      .formularioPerfil figure::before {
+        content: "";
+        width: 20em;
+        height: 20em;
+        background: var(--color-secondary);
+        border-radius: 10000%;
+        position: absolute;
+        z-index: 1; /* Círculo debajo de la imagen */
+      }
+      
+      .formularioPerfil figure img {
+        width: 20em;
+        height: 20em;
+        object-fit: cover;
+        border-radius: 10000%;
+        z-index: 2; /* Imagen encima del círculo */
+      }
+      
+      .formularioPerfil figure input {
+        position: absolute;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        z-index: 3; /* Asegúrate de que el input esté encima de la imagen para recibir la interacción */
+      }
+      
+      .formularioPerfil figure::after {
+        content: "SELECCIONE UNA IMAGEN";
+        position: absolute;
+        font-size: 1.2em;
+        font-weight: bold;
+        width: 9em;
+        color: #8c6239;
+        text-align: center;
+        z-index: 1; /* El texto de la etiqueta está debajo de la imagen */
+      }
+    }
+
+    .contenedorBoton {
+      display: flex;
+      justify-content: right;
+      align-items: end;
+
+      .botonContinuar {
+        background-color: var(--color-primary);
+        color: var(--color-white);
+        border: none;
+        font-size: 1.4em;
+        font-weight: bold;
+        padding: 0.6em 1.3em;
+        border-radius: 0.7em;
+        max-height: 2.5em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .configuracionEstablecimiento {
+      display: grid;
+      grid-template-columns: 1fr;
+      /* Solo una columna */
+      grid-template-rows: auto;
+      /* Para que su contenido crezca */
+      justify-content: stretch;
+      width: 100%;
+      height: 100vh;
+      padding: 2em 3em;
+
+
+      .tituloPrincipal {
+        text-align: center;
+        font-size: 2.5em;
+        width: 100%;
+
+      }
+
+      p {
+        font-size: 1.1em;
+        width: 100%;
+
+      }
+
+      .formularioEstablecimiento {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+        /* Dos columnas */
+        grid-template-rows: auto auto auto auto;
+        /* 4 filas automáticas */
+        gap: .8em;
+        /* Espacio entre elementos */
+        width: 100%;
+        height: 100%;
+
+
+        .informacionInput:nth-child(1) {
+          grid-column: 1;
+          grid-row: 1;
+        }
+
+        /* NIT */
+        .informacionInput:nth-child(2) {
+          grid-column: 1;
+          grid-row: 2;
+        }
+
+        /* Nombre */
+        .informacionInput:nth-child(3) {
+          grid-column: 1;
+          grid-row: 3;
+        }
+
+        /* Dirección */
+        .informacionInput:nth-child(4) {
+          grid-column: 2;
+          grid-row: 1 / span 3;
+        }
+
+        /* Descripción (grande en la derecha) */
+        .informacionInput:nth-child(5) {
+          grid-column: 1;
+          grid-row: 4;
+        }
+
+        /* Teléfono */
+        .informacionInput:nth-child(6) {
+          grid-column: 2;
+          grid-row: 4;
+        }
+
+        /* Correo */
+      }
+    }
+
+  }
+
+  .informacionInput {
+    display: flex;
+    flex-direction: column;
+
+    .nombreInput {
+      color: #a68160;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    /*estilos para los diferentes inputs*/
+
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 1.2em;
+    border: none;
+    font-weight: 500;
+    width: 100%;
+    padding: 0.5em 0;
+    border-radius: 0.7em;
+    resize: vertical;
+    overflow-y: auto;
+    background-color: var(--color-secondary);
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    padding-left: 0.5em;
+  }
+
+  textarea {
+    resize: none;
+    overflow: hidden;
+    /* Esto también ayuda a evitar el desplazamiento si se introduce más texto del tamaño visible */
+  }
+
+  .formulario {
+    display: none;
+    grid-template-rows: 1fr;
+    /* Hace que ocupe todo el espacio disponible */
+    justify-content: stretch;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .formulario.active {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Solo una columna */
+    grid-template-rows: auto;
+    /* Para que su contenido crezca */
+    justify-content: stretch;
+    width: 100%;
+    height: 100vh;
+
+  }
+
+  .configuracionNegocio {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Solo una columna */
+    grid-template-rows: auto;
+    /* Para que su contenido crezca */
+    justify-content: stretch;
+    width: 100%;
+    height: 100vh;
+    padding:
+      2em 3em;
+    gap: 1em;
+
+    .tituloPrincipal {
+      text-align: center;
+      font-size: 2em;
+      width: 100%;
+
+    }
+
+    .contenedorImagen {
+      position: relative;
+      width: 100%;
+      height: 17em;
+      border-radius: 2em;
+
+
+      .imagenFondo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        cursor: pointer;
+        border-radius: 2em 2em 0 0;
+
+
+      }
+
+      .logoNegocio {
+        position: absolute;
+        bottom: -1.4em;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 15em;
+        border-radius: 100%;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        border: 2px solid var(--color-primary);
+        z-index: 1000;
+        /* Se asegura de que esté por encima de todo */
+
+
+
+      }
+
+      .logoNegocio img {
+        width: 15em;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 100%;
+
+      }
+
+      /* Inputs invisibles para cambiar la imagen */
+      .inputFile {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+
+
+      }
+
+      .inputDescrip {
+        resize: none;
+
+      }
+    }
+
+    .formularioNegocio {
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .8em;
+
+    }
+  }
+}

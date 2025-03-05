@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('Css/Config/configBienvenidaAdmin.css') }}">
+    <title>Configuración MiNegocio - MYLOOK</title>
+</head>
+
+<body>
+
+
+
+
+  <aside class="navegacion">
+    <img
+      src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2224%22%20height=%2224%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22white%22%20stroke-width=%222%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%3E%3Cpath%20stroke=%22none%22%20d=%22M0%200h24v24H0z%22%20fill=%22none%22/%3E%3Cpath%20d=%22M10%208v-2a2%202%200%200%201%202%20-2h7a2%202%200%200%201%202%202v12a2%202%200%200%201%20-2%202h-7a2%202%200%200%201%20-2%20-2v-2%22/%3E%3Cpath%20d=%22M15%2012h-12l3%20-3%22/%3E%3Cpath%20d=%22M6%2015l-3%20-3%22/%3E%3C/svg%3E"
+      class="iconoSalir" alt="icono">
+
+    <div class="mensajeBienvenida">
+      <h3>Bienvenido</h3>
+      <h1>Ramiro vasquez</h1>
+    </div>
+
+    <!-- aqui se deberia de mostrar la foto de perfil de el administrador en caso de que la tenga -->
+    <figure class="contenedorImagen">
+      <img src="https://filestore.community.support.microsoft.com/api/images/3ac075ba-65ca-4901-9702-862868564dfd?upload=true"
+        alt="" />
+    </figure>
+
+    <!--            FORMUALRIO QUE SE VISUALIZA UNA VEZ SE ENTRA A CONFIGURAR EL INDEX ADMIN -->
+    <article class="introduccionConfiguracion">
+      <div class="tituloIntroduccion">
+        <h2 class="nombreConfiguracion">Configuración Mi Negocio</h2>
+        <p class="descripcionConfiguracion">
+          En este apartado tendras las opciones para crear y configurar tu
+          negocio. ¡Cada paso que das te acerca al éxito!
+        </p>
+      </div>
+      <article class="nota">
+        <p class="tituloNota">
+          <strong>Consejo:</strong>
+          La información registrada en este apartado definirá la presencia de tu negocio en la plataforma y
+          será visible
+          para los usuarios. Te recomendamos completar los datos con precisión, ya que representan tu
+          establecimiento y
+          perfil comercial.
+        </p>
+      </article>
+    </article>
+
+
+  </aside>
+
+  <main>
+    <section class="configuracionAdministrador">
+      <!--FORMULARIO DONDE SE PUEDE EDITAR LA INFORMACION DEL PERFIL DEL ADMINISTRADOR -->
+      <form action="{{ route('registerUserAdmin') }}" method="POST" class="configuracionPerfil formulario active"
+        id="form1" enctype="multipart/form-data" >
+        @csrf
+        <h2 class="tituloPrincipal">CONFIGURACION PERFIL</h2>
+
+        <p>
+          En este apartado podrás modificar tu información personal de forma
+          fácil y rápida. Esto te permitirá mantener tus datos actualizados
+          en todo momento
+        </p>
+
+
+        <section class="formularioPerfil">
+          <div class="informacionInput">
+            <p class="nombreInput">DOCUMENTO</p>
+            <input type="number" class="inputDocumento" name="idAdmin">
+          </div>
+
+          <div class="informacionInput">
+            <p class="nombreInput">NOMBRE</p>
+            <input type="text" class="inputNombre" name="nombreAdmin">
+          </div>
+
+          <div class="informacionInput">
+            <p class="nombreInput">APELLIDO</p>
+            <input type="text" class="inputApellido" name="apellidoAdmin">
+          </div>
+
+          <div class="informacionInput">
+            <p class="nombreInput">CORREO</p>
+            <input type="text" class="inputCorreo" name="correoAdmin">
+          </div>
+
+          <div class="informacionInput">
+            <p class="nombreInput">TELEFONO</p>
+            <input type="number" class="inputTelefono" name="telefonoAdmin">
+          </div>
+
+          <figure>
+            <input type="file" name="imagenPerfil" id="fileInput" accept="image/*" />
+            <img id="previsualizacionImagen" src="" alt="" />
+          </figure>
+          
+
+          <div class="informacionInput">
+            <p class="nombreInput">CONTRASEÑA</p>
+            <input type="text" class="inputPassword" name="contrasenaAdmin">
+          </div>
+        </section>
+
+        <div class="contenedorBoton">
+          <button type="submit" class="botonContinuar">SIGUIENTE</button>
+        </div>
+      </form>
+
+      <!--FORMULARIO DONDE SE PUEDE EDITAR LA INFORMACION DEL PERFIL DEL NEGOCIO ( ESTO SOLO PDRA SER EDITADO SI EL ADMIN LIDER INICIE SESION ) -->
+      <form action="{{ route('updateNegocio', ['id' => $negocioData['id_negocio']]) }}" method="POST"
+        class="configuracionNegocio formulario" id="form2" style="display: none;">
+        @csrf
+        @method('PUT')
+        <h2 class="tituloPrincipal">CONFIGURACION NEGOCIO</h2>
+        <div class="contenedorImagen">
+          <!-- Input de imagen de fondo -->
+          <input type="file" id="inputImagenFondo" class="inputFile" accept="image/*">
+          <img id="imagenFondo" class="imagenFondo"
+            src="https://img.freepik.com/foto-gratis/sillas-vintage-peluqueria_155003-10150.jpg?t=st=1741058411~exp=1741062011~hmac=83e715b06e39d3689c7b29fdaa0eaceb0c4f6c1521f4b0fab3e020e84583ad27&w=1060"
+            alt="Imagen de fondo">
+
+          <!-- Input para el logo (imagen superpuesta) -->
+          <div class="logoNegocio">
+            <input type="file" id="inputLogo" class="inputFile" accept="image/*">
+            <img id="logo" src="https://d1yjjnpx0p53s8.cloudfront.net/logotipo-imperio-barberia-vector1.png"
+              alt="Logo del negocio">
+          </div>
+        </div>
+        <div class="formularioNegocio">
+          <div class="informacionInput">
+            <p class="nombreInput">IDENTIFICACION</p>
+            <input type="number" class="inputId" name="idNegocio" value="{{ $negocioData['id_negocio'] }}" readonly>
+          </div>
+
+
+          <div class="informacionInput">
+            <p class="nombreInput">NOMBRE</p>
+            <input type="text" class="inputNombre" name="nombreNegocio" value="{{ $negocioData['nombre_negocio'] }}"
+              readonly>
+          </div>
+
+
+          <div class="informacionInput">
+            <p class="nombreInput">DESCRIPCION</p>
+            <textarea name="descripcionNegocio" id="" cols="30" rows="1" class="inputDescrip"></textarea>
+          </div>
+
+
+          <div class="informacionInput">
+            <p class="nombreInput">ADMINISTRADOR LIDER</p>
+            <input type="text" class="inputLider" name="nombreAdmin"
+              value="{{ session('nombreAdmin') }} {{ session('apellidoAdmin') }}" readonly>
+            <!-- Aqui se muestra el nombre y el apellido del registro que se hizo en el perfil administrador sin poder editar -->
+            <input type="hidden" name="id_usuario" value="{{ session('id_usuario') }}">
+            <!-- Aqui se guarda el id_usuario -->
+          </div>
+
+        </div>
+
+        <div class="contenedorBoton">
+          <button type="submit" class="botonContinuar">INICIAR</button>
+        </div>
+      </form>
+
+      <!--FORMULARIO DONDE SE PUEDE EDITAR LA INFORMACION DEL PERFIL DEL ESTABLECIMIENTO -->
+      <form action="{{ route('registerEstablecimiento') }}" method="POST"
+        class="configuracionEstablecimiento formulario" id="form3" enctype="multipart/form-data" style="display: none;">
+        @csrf
+        <h2 class="tituloPrincipal">CONFIGURACIÓN ESTABLECIMIENTO</h2>
+
+        <p>
+          En este apartado podrás modificar los datos de la sede de forma fácil y rápida. Esto te permitirá
+          mantener la
+          información actualizada en todo momento.
+        </p>
+
+        <input type="hidden" name="idNegocio" value="{{ session('id_negocio') }}">
+
+        <section class="formularioEstablecimiento">
+          <div class="informacionInput">
+            <p class="nombreInput">NIT NEGOCIO</p>
+            <input type="number" class="inputId" name="idEstablc">
+          </div>
+
+          <div class="informacionInput">
+            <p class="nombreInput">NOMBRE</p>
+            <input type="text" class="inputNombre" name="nombreEst" id="nombre">
+          </div>
+
+          <div class="informacionInput">
+            <p class="nombreInput">DIRECCIÓN</p>
+            <input type="text" class="inputDireccion" name="direccionEstablecimiento">
+          </div>
+
+          <div class="informacionInput">
+            <p class="nombreInput">DESCRIPCIÓN</p>
+            <textarea name="descripcionEstablecimiento" id="" cols="30" rows="10" class="inputDescripcion"></textarea>
+          </div>
+
+          <div class="informacionInput">
+            <p class="nombreInput">TELÉFONO</p>
+            <input type="text" class="inputTel" name="telefonoEstablecimiento">
+          </div>
+
+          <div class="informacionInput">
+            <p class="nombreInput">CORREO</p>
+            <input type="text" class="inputEmail" name="correoEstablecimiento">
+          </div>
+        </section>
+
+        <div class="contenedorBoton">
+          <button type="submit" class="botonContinuar">SIGUIENTE</button>
+        </div>
+      </form>
+    </section>
+  </main>
+    <script src="/Js/Admin/configBienvenidaAdmin.js"></script>
+
+</body>
+
+</html>
