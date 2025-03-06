@@ -112,45 +112,53 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-document.getElementById('fileInput').addEventListener('change', function(event) {
+document.getElementById('fileInput').addEventListener('change', function (event) {
     const file = event.target.files[0];
     const reader = new FileReader();
-    
-    reader.onload = function(e) {
-      const previewImage = document.getElementById('previsualizacionImagen');
-      previewImage.src = e.target.result;
-    };
-    
-    if (file) {
-      reader.readAsDataURL(file);
-    }
-  });
 
-  document.getElementById('inputImagenFondo').addEventListener('change', function(event) {
+    reader.onload = function (e) {
+        const previewImage = document.getElementById('previsualizacionImagen');
+        previewImage.src = e.target.result;
+    };
+
+    if (file) {
+        reader.readAsDataURL(file);
+    }
+});
+
+document.getElementById('inputImagenFondo').addEventListener('change', function (event) {
     const file = event.target.files[0];
     if (file) {
-      const reader = new FileReader();
-      
-      reader.onload = function(e) {
-        // Establecemos la nueva imagen de fondo
-        document.getElementById('imagenFondo').src = e.target.result;
-      };
-      
-      reader.readAsDataURL(file); // Lee el archivo como una URL de datos
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+            // Establecemos la nueva imagen de fondo
+            document.getElementById('imagenFondo').src = e.target.result;
+        };
+
+        reader.readAsDataURL(file); // Lee el archivo como una URL de datos
     }
-  });
-  
-  document.getElementById('inputLogo').addEventListener('change', function(event) {
+});
+
+document.getElementById('inputLogo').addEventListener('change', function (event) {
     const file = event.target.files[0];
     if (file) {
-      const reader = new FileReader();
-      
-      reader.onload = function(e) {
-        // Establecemos la nueva imagen del logo
-        document.getElementById('logo').src = e.target.result;
-      };
-      
-      reader.readAsDataURL(file); // Lee el archivo como una URL de datos
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+            // Establecemos la nueva imagen del logo
+            document.getElementById('logo').src = e.target.result;
+        };
+
+        reader.readAsDataURL(file); // Lee el archivo como una URL de datos
     }
-  });
-  
+});
+
+// hola
+const openButton = document.getElementById('openButton');
+const myAside = document.getElementById('myAside');
+
+// Evento para abrir o cerrar el aside flotante
+openButton.addEventListener('click', () => {
+    myAside.classList.toggle('open');
+});

@@ -13,6 +13,57 @@
 
 
   <aside class="navegacion">
+  <!-- Ícono de salir representado en formato SVG en línea -->
+    <img
+      src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2224%22%20height=%2224%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22white%22%20stroke-width=%222%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%3E%3Cpath%20stroke=%22none%22%20d=%22M0%200h24v24H0z%22%20fill=%22none%22/%3E%3Cpath%20d=%22M10%208v-2a2%202%200%200%201%202%20-2h7a2%202%200%200%201%202%202v12a2%202%200%200%201%20-2%202h-7a2%202%200%200%201%20-2%20-2v-2%22/%3E%3Cpath%20d=%22M15%2012h-12l3%20-3%22/%3E%3Cpath%20d=%22M6%2015l-3%20-3%22/%3E%3C/svg%3E"
+      class="iconoSalir" alt="icono">
+
+<!-- Contenedor de bienvenida con el nombre del usuario -->
+    <div class="contenedorBienvenida">
+      <div class="mensajeBienvenida">
+        <!-- Nombre del usuario-->
+        <h3>Bienvenido</h3>
+        <h1>Ramiro vasquez</h1>
+      </div>
+  
+      <!-- aqui se deberia de mostrar la foto de perfil de el administrador en caso de que la tenga -->
+      <figure class="contenedorImagen">
+        <img src="https://filestore.community.support.microsoft.com/api/images/3ac075ba-65ca-4901-9702-862868564dfd?upload=true"
+          alt="" />
+      </figure>
+    </div>
+
+      <!-- Aquí se debe mostrar la foto de perfil del administrador si la tiene -->
+      <article class="introduccionConfiguracion">
+      <div class="tituloIntroduccion">
+        <h2 class="nombreConfiguracion">Configuración Mi Negocio</h2>
+        <p class="descripcionConfiguracion">
+          En este apartado tendras las opciones para crear y configurar tu
+          negocio. ¡Cada paso que das te acerca al éxito!
+        </p>
+      </div>
+
+      <!-- Nota con un consejo para completar la información de la configuración -->
+      <article class="nota">
+        <p class="tituloNota">
+          <strong>Consejo:</strong>
+          La información registrada en este apartado definirá la presencia de tu negocio en la plataforma y
+          será visible
+          para los usuarios. Te recomendamos completar los datos con precisión, ya que representan tu
+          establecimiento y
+          perfil comercial.
+        </p>
+      </article>
+    </article>
+
+
+  </aside>
+
+  <!--ABRE MOVIL -->
+  <!-- Botón flotante solo en móviles MOVIL-->
+  <button id="openButton" class="open-btn"><img src="https://img.icons8.com/?size=100&id=PpSBa7iaIak3&format=png&color=FFFFFF" alt=""></button>
+  <!-- Este aside se mostrará solo cuando se haga clic en el botón flotante MOVIL-->
+  <aside id="myAside" class="navegacion flotante">
     <img
       src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2224%22%20height=%2224%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22white%22%20stroke-width=%222%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%3E%3Cpath%20stroke=%22none%22%20d=%22M0%200h24v24H0z%22%20fill=%22none%22/%3E%3Cpath%20d=%22M10%208v-2a2%202%200%200%201%202%20-2h7a2%202%200%200%201%202%202v12a2%202%200%200%201%20-2%202h-7a2%202%200%200%201%20-2%20-2v-2%22/%3E%3Cpath%20d=%22M15%2012h-12l3%20-3%22/%3E%3Cpath%20d=%22M6%2015l-3%20-3%22/%3E%3C/svg%3E"
       class="iconoSalir" alt="icono">
@@ -31,7 +82,7 @@
     <!--            FORMUALRIO QUE SE VISUALIZA UNA VEZ SE ENTRA A CONFIGURAR EL INDEX ADMIN -->
     <article class="introduccionConfiguracion">
       <div class="tituloIntroduccion">
-        <h2 class="nombreConfiguracion">Configuración Mi Negocio</h2>
+        <h2 class="nombreConfiguracion">Mi Negocio</h2>
         <p class="descripcionConfiguracion">
           En este apartado tendras las opciones para crear y configurar tu
           negocio. ¡Cada paso que das te acerca al éxito!
@@ -40,41 +91,30 @@
       <article class="nota">
         <p class="tituloNota">
           <strong>Consejo:</strong>
-          La información registrada en este apartado definirá la presencia de tu negocio en la plataforma y
-          será visible
-          para los usuarios. Te recomendamos completar los datos con precisión, ya que representan tu
-          establecimiento y
-          perfil comercial.
+          La información ingresada en este apartado determinará la visibilidad y representación de su negocio en la plataforma. Se recomienda completarla con precisión.
+
         </p>
       </article>
     </article>
-
-
   </aside>
-  
-  <!-- Botón flotante solo en móviles -->
-  <button id="openButton" class="open-btn">Abrir Aside</button>
-
-  <!-- Este aside se mostrará solo cuando se haga clic en el botón flotante -->
-  <aside id="myAside" class="navegacion flotante">
-    <p>Contenido del nuevo Aside flotante en móviles</p>
-  </aside>
+<!--CIERRA MOVIL -->
   
   <main>
+    <!-- Contenedor de formularios -->
     <section class="configuracionAdministrador">
-      <!--FORMULARIO DONDE SE PUEDE EDITAR LA INFORMACION DEL PERFIL DEL ADMINISTRADOR -->
+      <!--FORMULARIO PARA REGISTRAR USUARIOS COMO ADMINISTRADORES -->
       <form action="{{ route('registerUserAdmin') }}" method="POST" class="configuracionPerfil formulario active"
-        id="form1" enctype="multipart/form-data" >
+        id="form1" enctype="multipart/form-data">
         @csrf
+        <!-- titulo formulario  -->
         <h2 class="tituloPrincipal">CONFIGURACION PERFIL</h2>
-
+        <!-- descripcion Formulario -->
         <p>
           En este apartado podrás modificar tu información personal de forma
           fácil y rápida. Esto te permitirá mantener tus datos actualizados
           en todo momento
         </p>
-
-
+        <!-- contenedor de inputs -->
         <section class="formularioPerfil">
           <div class="informacionInput">
             <p class="nombreInput">DOCUMENTO</p>
@@ -118,13 +158,15 @@
         </div>
       </form>
 
-      <!--FORMULARIO DONDE SE PUEDE EDITAR LA INFORMACION DEL PERFIL DEL NEGOCIO ( ESTO SOLO PDRA SER EDITADO SI EL ADMIN LIDER INICIE SESION ) -->
+      <!--FORMULARIO PARA CREAR O ACTUALIZAR EL NEGOCIO -->
       <form action="{{ route('updateNegocio', ['id' => $negocioData['id_negocio']]) }}" method="POST"
         class="configuracionNegocio formulario" id="form2" style="display: none;">
         @csrf
         @method('PUT')
+<!-- titulo formulario -->
         <h2 class="tituloPrincipal">CONFIGURACION NEGOCIO</h2>
         <div class="contenedorImagen">
+
           <!-- Input de imagen de fondo -->
           <input type="file" id="inputImagenFondo" class="inputFile" accept="image/*">
           <img id="imagenFondo" class="imagenFondo"
@@ -138,6 +180,7 @@
               alt="Logo del negocio">
           </div>
         </div>
+        <!-- contenedor de inputs -->
         <div class="formularioNegocio">
           <div class="informacionInput">
             <p class="nombreInput">IDENTIFICACION</p>
@@ -174,9 +217,9 @@
         </div>
       </form>
 
-      <!--FORMULARIO DONDE SE PUEDE EDITAR LA INFORMACION DEL PERFIL DEL ESTABLECIMIENTO -->
-      <form action="{{ route('registerEstablecimiento') }}" method="POST"
-        class="configuracionEstablecimiento formulario" id="form3" enctype="multipart/form-data" style="display: none;">
+      <!--FORMULARIO PARA REGISTRAR ESTABLECIMIENTOS -->
+      <form action="{{ route('registerEstablecimiento') }}" method="POST" style="display: none;"
+        class="configuracionEstablecimiento formulario" id="form3" enctype="multipart/form-data">
         @csrf
         <h2 class="tituloPrincipal">CONFIGURACIÓN ESTABLECIMIENTO</h2>
 
