@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Servicios a Tu Alcance: Barberías y Más</title>
+</head>
+
+<body>
+    <header>
+        <div class="contenedorLogo">
+            <h2 class="MiLook">MYLOOK</h2>
+        </div>
+        <nav>
+            <ul class="navegacion">
+                <!-- Contenedor de búsqueda -->
+                <li class="contendorBusqueda">
+                    <button class="botonBuscar"><i class="fa-solid fa-magnifying-glass"
+                            style="color: #a68160;"></i></button>
+                    <input type="text" class="busqueda" placeholder="Buscar">
+                </li>
+                <li><a href="#inicio"><button class="opcion activo">INICIO</button></a></li>
+                <li class="marcoOpciones">
+                    <button class="opcion">CATEGORIAS</button>
+                    <ul class="submenu">
+                        <li><a href="#">Peluquería</a></li>
+                        <li><a href="#">Uñas</a></li>
+                        <li><a href="#">Maquillaje</a></li>
+                        <li><a href="#">Barbería</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ranking"><img width="40" height="40"
+                            src="https://img.icons8.com/fluency-systems-filled/100/a68160/trophy.png"
+                            alt="trophy" /></a>
+                </li>
+
+                <li id="contenedorPerfil">
+                    <img id="imagenPerfil"
+                        src="https://img.freepik.com/foto-gratis/foto-chico-guapo-afeitar-mira-expresion-agradable-directamente-camara_176532-8164.jpg?t=st=1741310004~exp=1741313604~hmac=b96ceb1007ac2a5f00ef8d94df3f668bf91c955d864587dcdab47900c8c4d92c&w=1060"
+                        alt="Foto de perfil" class="imagenPerfil">
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+        <section class="contenedorCarrusel">
+            <div class="carrusel">
+
+                <article class="elementoCarrusel activo"
+                    style="background-image: url('https://img.freepik.com/foto-gratis/sillas-vintage-peluqueria_155003-10150.jpg?t=st=1741447697~exp=1741451297~hmac=01d30b991787161b9275570c9079ef23f665daf1e5feb8ccd7e2139910268521&w=1060');">
+                    <span class="etiquetaCategoria">BARBERÍA</span>
+                    <div class="contenidoElemento">
+                        <div class="informacionEstablecimiento">
+                            <h2 class="tituloEstablecimiento">IMPERIO BARBER</h2>
+                            <p class="descripcionEstablecimiento">Centro de corte de pelo, Peluquería. Cortes de estilo
+                                libre de Alta Barbería. Más de 10 años de experiencia en la ciudad.</p>
+                            <button class="boton-agendar">
+                                <div class="icono">
+                                    <img width="100" height="100"
+                                        src="https://img.icons8.com/ios-filled/100/FFFFFF/event-accepted-tentatively.png"
+                                        alt="event-accepted-tentatively" />
+                                </div>
+                                <span>AGENDAR</span>
+                            </button>
+
+                        </div>
+                        <div class="imagenPerfil">
+                            <img src="https://d1yjjnpx0p53s8.cloudfront.net/logotipo-imperio-barberia-vector1.png"
+                                alt="Logo Imperio Barber">
+                        </div>
+                    </div>
+                </article>
+
+                <article class="elementoCarrusel "
+                    style="background-image: url('https://img.freepik.com/foto-gratis/dormitorio-lujo-iluminado-lampara-electrica-moderna-generada-ia_188544-28185.jpg?t=st=1741447790~exp=1741451390~hmac=2eb7e310de63b49725389716fd4417e4020247b2ccd332e2e81854e805b3b360&w=1380');">
+                    <span class="etiquetaCategoria">SPA</span>
+                    <div class="contenidoElemento">
+
+                        <div class="informacionEstablecimiento">
+                            <h2 class="tituloEstablecimiento">SO PURE</h2>
+                            <p class="descripcionEstablecimiento">Especialistas en el cuidao y tratamiento de la piel,
+                                masajes, depilacion laser y mucho mas! ¿Que esperas?</p>
+                            <button class="boton-agendar">
+                                <div class="icono">
+                                    <img width="100" height="100"
+                                        src="https://img.icons8.com/ios-filled/100/FFFFFF/event-accepted-tentatively.png"
+                                        alt="event-accepted-tentatively" />
+                                </div>
+                                <span>AGENDAR</span>
+                            </button>
+
+                        </div>
+                        <div class="imagenPerfil">
+                            <img src="https://images-platform.99static.com//LvpAAksYSeeAr56uOhIFeQi3aMk=/306x0:1095x789/fit-in/590x590/projects-files/18/1828/182859/eb7ab1b9-dd87-fa5a-50f0-7258213d7335.png"
+                                alt="Logo Imperio Barber">
+                        </div>
+                    </div>
+                </article>
+
+                <article class="elementoCarrusel"
+                    style="background: url('https://img.freepik.com/foto-gratis/productos-maquillaje-espacio-copia_23-2148598505.jpg?t=st=1741448694~exp=1741452294~hmac=ab30b85005bc1184b3c21535d49f7c2d3e790ea54f0940bc1f097bb32d3ea733&w=1380');">
+                    <span class="etiquetaCategoria">BARBERÍA</span>
+                    <div class="contenidoElemento">
+
+                        <div class="informacionEstablecimiento">
+                            <h2 class="tituloEstablecimiento">REBECCA SMITH</h2>
+                            <p class="descripcionEstablecimiento">Resalta tu belleza con nuestro maquillaje profesional.
+                                Looks perfectos para cualquier ocasión, con acabados impecables y de larga duración.?
+                            </p>
+                            <button class="boton-agendar">
+                                <div class="icono">
+                                    <img width="100" height="100"
+                                        src="https://img.icons8.com/ios-filled/100/FFFFFF/event-accepted-tentatively.png"
+                                        alt="event-accepted-tentatively" />
+                                </div>
+                                <span>AGENDAR</span>
+                            </button>
+
+                        </div>
+                        <div class="imagenPerfil">
+                            <img src="https://cdn.create.vista.com/downloads/dcdd47d4-f1f8-4dc0-83c8-1b3ff3a23a46_1024.jpeg"
+                                alt="Logo Imperio Barber">
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+            <button class="botonNavegacion botonAnterior"><i class="fa-solid fa-caret-left"
+                    style="color: #ffffff;"></i></button>
+            <button class="botonNavegacion botonSiguiente"><i class="fa-solid fa-caret-right"
+                    style="color: #ffffff;"></i></button>
+        </section>
+
+
+        <section class="establecimientosRecomendados">
+            <h2 class="tituloSeccion">ESTABLECIMIENTOS RECOMENDADOS</h2>
+            <div class="contenedorEstablecimientos">
+                <article class="cartaEstablecimiento">
+                    <img src="https://cdn.create.vista.com/downloads/dcdd47d4-f1f8-4dc0-83c8-1b3ff3a23a46_1024.jpeg"
+                        alt="Imagen del establecimiento">
+
+                    <div class="contenedorInformacion">
+                        <div class="informacion">
+                            <div class="nombreDescripcion">
+                                <h2>REBECCA SMITH</h2>
+                                <p>Resalta tu belleza con nuestro maquillaje profesional.</p>
+                            </div>
+                            <div class="servicios">
+                                <h3>Especialidades</h3>
+                                <ul>
+                                    <li>Sombras</li>
+                                    <li>Makeups</li>
+                                    <li>SkinCare</li>
+                                    <li>Peinados</li>
+                                </ul>
+                                <div class="puntuacion">★★★★★</div>
+                            </div>
+                        </div>
+
+                        <div class="contenedorBotonAgendar">
+                            <button class="botonAgendar">AGENDAR</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="cartaEstablecimiento">
+                    <img src="https://d1yjjnpx0p53s8.cloudfront.net/logotipo-imperio-barberia-vector1.png"
+                        alt="Imagen del establecimiento">
+
+                    <div class="contenedorInformacion">
+                        <div class="informacion">
+                            <div class="nombreDescripcion">
+                                <h2>IMPERIO BARBER</h2>
+                                <p>¡Priorizamos tu comodidad y calidad de tu corte!</p>
+                            </div>
+                            <div class="servicios">
+                                <h3>Especialidades</h3>
+                                <ul>
+                                    <li>Degradados</li>
+                                    <li>Dibujos</li>
+                                    <li>Barba</li>
+                                    <li>Cejas</li>
+                                </ul>
+                                <div class="puntuacion">★★★★★</div>
+                            </div>
+                        </div>
+
+                        <div class="contenedorBotonAgendar">
+                            <button class="botonAgendar">AGENDAR</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="cartaEstablecimiento">
+                    <img src="https://images-platform.99static.com//LvpAAksYSeeAr56uOhIFeQi3aMk=/306x0:1095x789/fit-in/590x590/projects-files/18/1828/182859/eb7ab1b9-dd87-fa5a-50f0-7258213d7335.png"
+                        alt="Imagen del establecimiento">
+
+                    <div class="contenedorInformacion">
+                        <div class="informacion">
+                            <div class="nombreDescripcion">
+                                <h2>MY SO PURE</h2>
+                                <p>specialistas en el cuidado y tratamiento de la piel</p>
+                            </div>
+                            <div class="servicios">
+                                <div class="especialidades">
+                                    <h3>Especialidades</h3>
+                                    <ul>
+                                        <li>Masajes</li>
+                                        <li>tratamientos</li>
+                                        <li>lavados</li>
+                                    </ul>
+                                </div>
+                                <div class="puntuacion">★★★★★</div>
+                            </div>
+                        </div>
+
+                        <div class="contenedorBotonAgendar">
+                            <button class="botonAgendar">AGENDAR</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+        </section>
+
+
+        <section class="establecimientosDestacados" id="">
+            <!-- Sección de establecimientos recomendados de la semana -->
+
+            <h3 class="tituloSeccion">ESTABLECIMIENTOS DESTACADOS</h3>
+
+            <div class="contenedorImagenesDestacado">
+                <!-- Contenedor que agrupa las tarjetas de los establecimientos destacados -->
+
+                <!-- Tarjeta del establecimiento "Vanidosas" -->
+                <div class="cardDestacado">
+                    <img src="https://vanidosasalamoda.cl/cdn/shop/files/Diseno_sin_titulo-4.png?height=628&pad_color=ffffff&v=1679602912&width=1200"
+                        alt="Imagen de Vanidosas" class="destacadoImagen">
+                    <div class="nombrePosicion">
+                        <h4>Vanidosas</h4>
+                        <img src="https://img.icons8.com/wired/64/FFFFFF/2-circle.png" alt="Puesto número 2" />
+                    </div>
+                </div>
+
+                <!-- Tarjeta del establecimiento "Imperio" -->
+                <div class="cardDestacado">
+                    <img src="https://d1yjjnpx0p53s8.cloudfront.net/logotipo-imperio-barberia-vector1.png"
+                        alt="Imagen de Imperio" class="destacadoImagen">
+                    <div class="nombrePosicion">
+                        <h4>Imperio</h4>
+                        <img src="https://img.icons8.com/wired/64/FFFFFF/1-circle.png" alt="Puesto número 1" />
+                    </div>
+                </div>
+
+                <!-- Tarjeta del establecimiento "Luxury" -->
+                <div class="cardDestacado">
+                    <img src="https://img.freepik.com/vector-premium/plantilla-vectorial-diseno-logotipo-marca-real-lujo_441059-968.jpg?semt=ais_hybrid"
+                        alt="Imagen de Luxury" class="destacadoImagen">
+                    <div class="nombrePosicion">
+                        <h4>Luxury</h4>
+                        <img src="https://img.icons8.com/wired/64/FFFFFF/3-circle--v1.png" alt="Puesto número 3" />
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+
+
+
+
+
+    <footer>
+        <!-- Sección de información sobre la empresa -->
+        <section class="sobreNosotros">
+            <h2>Sobre Nosotros</h2>
+            <div class="sobreNosotrosContenido">
+                <!-- Enlaces a diferentes secciones informativas -->
+                <a href="">¿Quienes somos?</a>
+                <a href="">Eventos</a>
+                <a href="">Contáctanos</a>
+            </div>
+
+            <!-- Íconos de redes sociales -->
+            <div class="redes">
+                <i class="fab fa-facebook-f iconFacebook icon"></i> <!-- Facebook -->
+                <i class="fab fa-instagram icon"></i> <!-- Instagram -->
+                <i class="fab fa-whatsapp icon"></i> <!-- WhatsApp -->
+            </div>
+        </section>
+
+        <!-- Sección del logo y nombre de la empresa -->
+        <section class="sta">
+            <div class="contenedorLogoFooter">
+                <i class="fa-solid fa-lightbulb logoFooter" style="color: #ffffff;"></i>
+            </div>
+            <h2>STA</h2>
+        </section>
+
+        <!-- Sección de atención al cliente -->
+        <section class="atencionCliente">
+            <h2>Atención al cliente</h2>
+            <div class="atencionClienteContenido">
+                <!-- Enlaces a soporte y accesibilidad -->
+                <a href="">Contacto</a>
+                <a href="">Centro de ayuda</a>
+                <a href="">Accesibilidad</a>
+            </div>
+        </section>
+    </footer>
+    <script src="app.js"></script>
+</body>

@@ -1,0 +1,1419 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI';
+}
+
+/* Variables de css*/
+:root {
+    --color-primary: #a68160;
+    --color-secondary: #f2f2f2;
+    --color-white: white;
+    --color-black: black;
+}
+
+body {
+    overflow-x: hidden;
+    display: grid;
+    gap: 2em;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 1em;
+    gap: 2em;
+
+    .contenedorLogo {
+        h2 {
+            font-size: clamp(2rem, 3.5vw, 3.5rem);
+        }
+    }
+
+    .navegacion {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        gap: 1em;
+
+        li {
+            position: relative;
+        }
+    }
+
+    .opcion {
+        background: none;
+        border: none;
+        color: var(--color-primary);
+        font-size: 1.1em;
+        cursor: pointer;
+        padding: .8em;
+        font-weight: 500;
+    }
+
+    .opcion:hover {
+        color: var(--color-black);
+    }
+
+    /* Menú desplegable */
+    .marcoOpciones .submenu {
+        display: none;
+        position: absolute;
+        top: 2.8em;
+        left: 0;
+        background-color: var(--color-black);
+        color: var(--color-white);
+        list-style: none;
+        border-radius: .3em;
+        min-width: 10em;
+        z-index: 11;
+    }
+
+    .marcoOpciones:hover .submenu {
+        display: block;
+    }
+
+    .submenu li a {
+        text-decoration: none;
+        color: white;
+        display: block;
+        padding: .4em;
+        font-weight: 500;
+    }
+
+    .submenu li a:hover {
+        background-color: var(--color-primary);
+        color: var(--color-white);
+        border-radius: .3em;
+
+    }
+
+    /* Estilos para la barra de búsqueda */
+    .contendorBusqueda {
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+    .botonBuscar {
+        background: var(--color-secondary);
+        border: none;
+        font-size: 1.3em;
+        cursor: pointer;
+        color: white;
+        transition: 0.3s;
+    }
+
+    .busqueda {
+        width: 0px;
+        opacity: 0;
+        padding: .4em;
+        border-radius: .3em;
+        border: 1px solid var(--color-primary);
+        transition: width 0.3s ease, opacity 0.3s ease;
+        position: absolute;
+        right: 2.4em;
+        background: white;
+        color: black;
+    }
+
+    .contendorBusqueda:hover .busqueda {
+        width: 150px;
+        opacity: 1;
+    }
+
+    .imagenPerfil {
+        width: clamp(2rem, 6vw, 4rem);
+        height: clamp(2rem, 6vw, 4rem);
+        object-fit: cover;
+        border-radius: 50%;
+        border: 1px solid var(--color-primary);
+    }
+
+    a {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+
+        button {
+            border: 1px solid var(--color-primary);
+            color: var(--color-primary);
+            font-size: clamp(1rem, 1.5vw, 1.8rem);
+            display: flex;
+            align-items: center;
+            padding: .3em 1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: .5em;
+            font-weight: bold;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+main {
+    display: grid;
+    gap: 4em;
+}
+
+.contenedorCarrusel {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: visible;
+
+    .carrusel {
+        display: flex;
+        position: absolute;
+        transform: translateX(-50%);
+        transition: transform 0.5s ease-in-out;
+
+        .elementoCarrusel {
+            position: relative;
+            width: 40em;
+            height: 30em;
+            margin: 0 .9em;
+            background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20pantalla%202025-03-07%20202616-XgCF11xdSnuNYzQRytiXLVDFPwWiwk.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            border-radius: .7em;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            transform: scale(0.85);
+            opacity: 0.7;
+            display: flex;
+            align-items: end;
+            justify-content: center;
+            box-shadow: 0 .2em 1em rgba(0, 0, 0, 0.2);
+
+            .contenidoElemento {
+                background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.4) 10%, rgba(0, 0, 0, 0.8) 30%, black 50%);
+                position: relative;
+                z-index: 2;
+                display: grid;
+                grid-template-columns: 4fr 1fr;
+                gap: 1em;
+                align-items: center;
+                justify-content: space-between;
+                text-align: center;
+                padding: 1.1em;
+
+                .imagenPerfil {
+                    border-radius: 100%;
+                    height: 10em;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: hidden;
+                    object-fit: cover;
+                    background-color: white;
+                    height: 8em;
+                    width: 8em;
+
+                    img {
+                        height: 10em;
+                        width: 10em;
+                        object-fit: contain;
+                    }
+                }
+
+                .informacionEstablecimiento {
+                    width: 100%;
+                    display: grid;
+                    text-align: left;
+
+                    .tituloEstablecimiento {
+                        font-size: 1.5em;
+                        margin-bottom: .8em;
+                        text-shadow: .1em .1em .2em rgba(0, 0, 0, 0.5);
+                    }
+
+                    .descripcionEstablecimiento {
+                        font-size: 0.8em;
+                        margin-bottom: .9em;
+                        line-height: 1.4;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                    }
+
+                    .boton-agendar {
+                        display: flex;
+                        align-items: center;
+                        background: white;
+                        width: 9em;
+                        height: 3em;
+                        border: none;
+                        border-radius: 3.5em;
+                        font-size: 1.2em;
+                        font-weight: bold;
+                        color: #9B7757;
+                        cursor: pointer;
+                        box-shadow: .1em 1.5em .2em rgba(0, 0, 0, 0.2);
+                        outline: none;
+                        transition: 0.3s;
+
+                        .icono {
+                            width: 3.5em;
+                            height: 3.5em;
+                            background: #9B7757;
+                            border-radius: 50%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            margin-right: .8em;
+
+                            img {
+                                width: 60%;
+                                height: 60%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .contenidoElemento {
+                background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.4) 10%, rgba(0, 0, 0, 0.8) 30%, black 50%);
+                position: relative;
+                z-index: 2;
+                display: grid;
+                grid-template-columns: 4fr 1fr;
+                gap: 1em;
+                align-items: center;
+                justify-content: space-between;
+                text-align: center;
+                padding: 20px;
+
+                .imagenPerfil {
+                    border-radius: 100%;
+                    height: 10em;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: hidden;
+                    object-fit: cover;
+                    background-color: white;
+                    height: 8em;
+                    width: 8em;
+
+                    img {
+                        height: 10em;
+                        width: 10em;
+                        object-fit: contain;
+                    }
+                }
+
+                .informacionEstablecimiento {
+                    width: 100%;
+                    display: grid;
+                    text-align: left;
+
+                    .tituloEstablecimiento {
+                        font-size: 1.5rem;
+                        margin-bottom: 10px;
+                        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                    }
+
+                    .descripcionEstablecimiento {
+                        font-size: 0.8rem;
+                        margin-bottom: 15px;
+                        line-height: 1.4;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                    }
+
+                    .boton-agendar {
+                        display: flex;
+                        align-items: center;
+                        background: white;
+                        width: 9em;
+                        height: 45px;
+                        border: none;
+                        border-radius: 50px;
+                        font-size: 20px;
+                        font-weight: bold;
+                        color: #9B7757;
+                        cursor: pointer;
+                        box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+                        outline: none;
+                        transition: 0.3s;
+
+                        .icono {
+                            width: 50px;
+                            height: 50px;
+                            background: #9B7757;
+                            border-radius: 50%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            margin-right: 10px;
+
+                            img {
+                                width: 60%;
+                                height: 60%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .imagenPerfil {
+                height: 8em;
+                width: 8em;
+            }
+
+            .etiquetaCategoria {
+                position: absolute;
+                top: 0;
+                right: 0;
+                background: rgb(0, 0, 0);
+                background: linear-gradient(90deg, rgba(0, 0, 0, 0) 4%, rgba(0, 0, 0, 0.3477766106442577) 10%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 39%);
+                padding: .2em 2.5em;
+                font-weight: bold;
+                z-index: 2;
+                font-size: 1.1em;
+            }
+        }
+    }
+
+    /*inicio clases para ejecutar animaciones y cambios en el carrusel */
+    .elementoCarrusel::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+    }
+
+    .elementoCarrusel.activo {
+        transform: scale(1.1);
+        opacity: 1;
+        z-index: 10;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .elementoCarrusel.activo .imagenPerfil {
+        height: 10em;
+        width: 10em;
+    }
+
+    .elementoCarrusel.activo .tituloEstablecimiento {
+        font-size: 2rem;
+    }
+
+    .elementoCarrusel.activo .descripcionEstablecimiento {
+        font-size: 0.9rem;
+        line-clamp: 4;
+    }
+
+    /*fin clases para ejecutar animaciones y cambios en el carrusel */
+
+    /*inicio botones de el carrusel */
+    .boton-agendar:hover {
+        background: var(--color-primary);
+        color: var(--color-white);
+    }
+
+    .botonNavegacion {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50px;
+        height: 50px;
+        background-color: #b78d65;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 20;
+        transition: background-color 0.3s;
+    }
+
+    .botonNavegacion:hover {
+        background-color: #9a7553;
+    }
+
+    .botonAnterior {
+        left: 20px;
+    }
+
+    .botonSiguiente {
+        right: 20px;
+    }
+
+    /*fin botones de el carrusel */
+}
+
+
+.establecimientosRecomendados {
+    padding: 3em;
+    width: 100%;
+    gap: 2em;
+    display: grid;
+    justify-content: center;
+
+    .tituloSeccion {
+        text-align: center;
+        font-size: 1.7em;
+    }
+
+    .contenedorEstablecimientos {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 columnas */
+        gap: 3em;
+        justify-content: center;
+
+        .cartaEstablecimiento {
+            width: 20em;
+            border: 2px solid var(--color-primary);
+            border-radius: .8em;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            color: var(--color-black);
+            position: relative;
+            justify-content: space-between;
+            height: 100%;
+
+            img {
+                width: 100%;
+                height: 14em;
+                object-fit: cover;
+                margin-bottom: -.5em;
+            }
+
+            .contenedorInformacion {
+                display: flex;
+                flex-direction: column;
+                flex-grow: 1;
+
+                /* Hace que la información crezca ocupando el espacio disponible */
+                .informacion {
+                    display: grid;
+                    flex-grow: 1;
+                    /* Esto empuja el botón hacia abajo */
+
+                    grid-template-columns: 1fr 1fr;
+                    align-items: center;
+                    padding: .8em .8em 0 .8em;
+                    background-color: var(--color-white);
+                    gap: .7em;
+                    border-top: 2px solid var(--color-primary);
+                    border-radius: 1em;
+
+
+                    .nombreDescripcion {
+                        height: 100%;
+                        font-weight: bold;
+                        font-size: 0.9em;
+
+                        h2 {
+                            display: block;
+                            max-width: 100%;
+                            /* Evita que el texto expanda el contenedor */
+                            overflow-wrap: break-word;
+                            /* Permite que las palabras largas se corten */
+                            word-break: break-word;
+                            /* Compatibilidad con navegadores más antiguos */
+                            white-space: normal;
+                            /* Asegura que el texto pueda romperse */
+                        }
+
+                        p {
+                            font-weight: normal;
+                            font-size: 1em;
+
+                        }
+                    }
+
+                    .servicios {
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        padding-left: 1em;
+                        border-left: 2px solid #a67c52;
+                        font-size: 1em;
+
+                        ul {
+                            list-style: none;
+                            padding: 0;
+                            margin: 0;
+
+                            li {
+                                font-size: 1em;
+
+
+
+                            }
+                        }
+
+                        .puntuacion {
+                            margin-top: auto;
+                            /* Empuja la puntuación al fondo */
+                            font-size: 1.7em;
+                            color: var(--color-primary);
+                        }
+                    }
+                }
+
+                .contenedorBotonAgendar {
+                    margin-top: auto;
+                    /* Empuja el botón al fondo */
+
+                    text-align: center;
+                    padding: .5em;
+                }
+
+                .botonAgendar {
+                    background-color: #a67c52;
+                    color: white;
+                    padding: 0.2em 1em;
+                    border: none;
+                    border-radius: 5px;
+                    font-size: 1em;
+                    font-weight: bold;
+                    cursor: pointer;
+                }
+
+                .botonAgendar:hover {
+                    background-color: #8b5e34;
+                }
+            }
+        }
+    }
+
+
+}
+
+.establecimientosDestacados {
+    /* Sección de establecimientos recomendados */
+    padding: 0 3em;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 2em;
+
+    .tituloSeccion {
+        font-size: 1.7em;
+
+    }
+
+    .contenedorImagenesDestacado {
+        /* Contenedor de tarjetas */
+        grid-template-columns: 1fr 1fr 1fr;
+        /* 3 columnas */
+        display: grid;
+        padding-top: 3em;
+        gap: 2em;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .cardDestacado {
+        /* Tarjeta */
+        width: 20em;
+        height: 300px;
+        border-radius: .7em .7em 0 0;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        position: relative;
+        background: white;
+        overflow: hidden;
+        /* Oculta contenido extra */
+        border: 2px solid var(--color-primary);
+    }
+
+    .cardDestacado:nth-child(2) {
+        transform: translateY(-45px);
+        /* Sube la tarjeta del medio */
+    }
+
+    .cardDestacado img.destacadoImagen {
+        /* Imagen dentro de la tarjeta */
+        width: 100%;
+        height: 83.4%;
+        object-fit: cover;
+        /* Ajusta la imagen */
+        display: block;
+        /* Elimina espacio extra */
+        border-radius: .7em .7em 0 0;
+    }
+
+    .nombrePosicion {
+        /* Texto dentro de la tarjeta */
+
+        background: var(--color-primary);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: .5em 0;
+        gap: 0.5em;
+    }
+
+    .nombrePosicion h4 {
+        /* Nombre del establecimiento */
+        margin: 0;
+        font-size: 1.4em;
+        font-weight: bold;
+        color: var(--color-secondary);
+    }
+
+    .nombrePosicion img {
+        /* Icono de posición */
+        width: 2em;
+        height: auto;
+    }
+
+    /* Efecto al pasar el mouse */
+    .cardDestacado:hover {
+        transform: scale(1.05) translateY(-5px);
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+}
+
+/* INICIO DE FOOTER*/
+footer {
+    background-color: var(--color-primary);
+    height: 100%;
+    margin-top: 5em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    color: var(--color-secondary);
+
+    a {
+        color: var(--color-secondary);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1.1em;
+    }
+    
+    /*contenedor 1 footer */
+    .sobreNosotros {
+        display: grid;
+        gap: 1em;
+        padding: 2em;
+        align-items: center;
+        justify-content: center;
+
+        .sobreNosotrosContenido {
+            display: grid;
+
+        }
+
+        .redes {
+            display: flex;
+            gap: 1em;
+
+            .icon {
+                font-size: 2em;
+            }
+        }
+    }
+    
+    /*contenedor 2 footer */
+    .sta {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2em;
+
+        .logoFooter {
+            font-size: 3em;
+        }
+
+        h2 {
+            font-size: 2.5em;
+        }
+    }
+
+    /*contenedor 3 footer */
+    .atencionCliente {
+        display: grid;
+        gap: 1em;
+        padding: 2em;
+        align-items: center;
+        justify-content: center;
+
+        .atencionClienteContenido {
+            display: grid;
+        }
+    }
+}
+/* FIN DE FOOTER*/
+
+
+
+
+@media (max-width: 768px) {
+
+    header {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        text-align: center;
+        background-color: var(--color-secondary);
+        justify-content: center;
+        align-items: center;
+        padding: .5 1em;
+        gap: 0em;
+    
+        .contenedorLogo {
+            width: 100%;
+            h2 {
+                font-size: clamp(2rem, 3.5vw, 3.5rem);
+            }
+        }
+    
+        .navegacion {
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            gap: .2em;
+    
+            li {
+                position: relative;
+            }
+        }
+    
+        .opcion {
+            background: none;
+            border: none;
+            color: var(--color-primary);
+            font-size: 1.1em;
+            cursor: pointer;
+            padding: .8em;
+            font-weight: 500;
+        }
+    
+        .opcion:hover {
+            color: var(--color-black);
+        }
+    
+        /* Menú desplegable */
+        .marcoOpciones .submenu {
+            display: none;
+            position: absolute;
+            top: 2.8em;
+            left: 0;
+            background-color: var(--color-black);
+            color: var(--color-white);
+            list-style: none;
+            border-radius: .3em;
+            min-width: 10em;
+            z-index: 11;
+        }
+    
+        .marcoOpciones:hover .submenu {
+            display: block;
+        }
+    
+        .submenu li a {
+            text-decoration: none;
+            color: white;
+            display: block;
+            padding: .4em;
+            font-weight: 500;
+        }
+    
+        .submenu li a:hover {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            border-radius: .3em;
+    
+        }
+    
+        /* Estilos para la barra de búsqueda */
+        .contendorBusqueda {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+    
+        .botonBuscar {
+            background: var(--color-secondary);
+            border: none;
+            font-size: 1.3em;
+            cursor: pointer;
+            color: white;
+            transition: 0.3s;
+        }
+    
+        .busqueda {
+            width: 0px;
+            opacity: 0;
+            padding: .4em;
+            border-radius: .3em;
+            border: 1px solid var(--color-primary);
+            transition: width 0.3s ease, opacity 0.3s ease;
+            position: absolute;
+            right: 2.4em;
+            background: white;
+            color: black;
+        }
+    
+        .contendorBusqueda:hover .busqueda {
+            width: 150px;
+            opacity: 1;
+        }
+    
+        .imagenPerfil {
+            width: clamp(2rem, 6vw, 4rem);
+            height: clamp(2rem, 6vw, 4rem);
+            object-fit: cover;
+            border-radius: 50%;
+            border: 1px solid var(--color-primary);
+        }
+    
+        a {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            height: 100%;
+    
+    
+            button {
+                border: 1px solid var(--color-primary);
+                color: var(--color-primary);
+                font-size: clamp(1rem, 1.5vw, 1.8rem);
+                display: flex;
+                align-items: center;
+                padding: .3em 1em;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: .5em;
+                font-weight: bold;
+            }
+        }
+    }
+    
+    
+
+
+    .contenedorCarrusel {
+        position: relative;
+        width: 100%;
+        height: 500px;
+        overflow: visible;
+    
+        .carrusel {
+            display: flex;
+            position: absolute;
+            transform: translateX(-50%);
+            transition: transform 0.5s ease-in-out;
+    
+            .elementoCarrusel {
+                position: relative;
+                width: 20em;
+                height: 30em;
+                margin: 0em;
+                background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20pantalla%202025-03-07%20202616-XgCF11xdSnuNYzQRytiXLVDFPwWiwk.png');
+                background-size: cover;
+                background-position: center;
+                color: white;
+                border-radius: .7em;
+                overflow: hidden;
+                transition: all 0.5s ease;
+                transform: scale(0.85);
+                opacity: 0.7;
+                display: flex;
+                align-items: end;
+                justify-content: center;
+                box-shadow: 0 .2em 1em rgba(0, 0, 0, 0.2);
+    
+                .contenidoElemento {
+                    background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.4) 10%, rgba(0, 0, 0, 0.8) 30%, black 50%);
+                    position: relative;
+                    z-index: 2;
+                    display: grid;
+                    grid-template-columns: 4fr 1fr;
+                    gap: 1em;
+                    align-items: center;
+                    justify-content: space-between;
+                    text-align: center;
+                    padding: 1.1em;
+    
+                    .imagenPerfil {
+                        border-radius: 100%;
+                        height: 10em;
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        overflow: hidden;
+                        object-fit: cover;
+                        background-color: white;
+                        height: 8em;
+                        width: 8em;
+    
+                        img {
+                            height: 10em;
+                            width: 10em;
+                            object-fit: contain;
+                        }
+                    }
+    
+                    .informacionEstablecimiento {
+                        width: 100%;
+                        display: grid;
+                        text-align: left;
+    
+                        .tituloEstablecimiento {
+                            font-size: 1.5em;
+                            margin-bottom: .8em;
+                            text-shadow: .1em .1em .2em rgba(0, 0, 0, 0.5);
+                        }
+    
+                        .descripcionEstablecimiento {
+                            font-size: 0.8em;
+                            margin-bottom: .9em;
+                            line-height: 1.4;
+                            display: -webkit-box;
+                            -webkit-box-orient: vertical;
+                            overflow: hidden;
+                        }
+    
+                        .boton-agendar {
+                            display: flex;
+                            align-items: center;
+                            background: white;
+                            width: 9em;
+                            height: 3em;
+                            border: none;
+                            border-radius: 3.5em;
+                            font-size: 1.2em;
+                            font-weight: bold;
+                            color: #9B7757;
+                            cursor: pointer;
+                            box-shadow: .1em 1.5em .2em rgba(0, 0, 0, 0.2);
+                            outline: none;
+                            transition: 0.3s;
+    
+                            .icono {
+                                width: 3.5em;
+                                height: 3.5em;
+                                background: #9B7757;
+                                border-radius: 50%;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                margin-right: .8em;
+    
+                                img {
+                                    width: 60%;
+                                    height: 60%;
+                                }
+                            }
+                        }
+                    }
+                }
+    
+                .contenidoElemento {
+                    background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.4) 10%, rgba(0, 0, 0, 0.8) 30%, black 50%);
+                    position: relative;
+                    z-index: 2;
+                    display: grid;
+                    grid-template-columns: 4fr 1fr;
+                    gap: 1em;
+                    align-items: center;
+                    justify-content: space-between;
+                    text-align: center;
+                    padding: 20px;
+    
+                    .imagenPerfil {
+                        border-radius: 100%;
+                        height: 10em;
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        overflow: hidden;
+                        object-fit: cover;
+                        background-color: white;
+                        height: 8em;
+                        width: 8em;
+    
+                        img {
+                            height: 10em;
+                            width: 10em;
+                            object-fit: contain;
+                        }
+                    }
+    
+                    .informacionEstablecimiento {
+                        width: 100%;
+                        display: grid;
+                        text-align: left;
+    
+                        .tituloEstablecimiento {
+                            font-size: 1.5rem;
+                            margin-bottom: 10px;
+                            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                        }
+    
+                        .descripcionEstablecimiento {
+                            font-size: 0.8rem;
+                            margin-bottom: 15px;
+                            line-height: 1.4;
+                            display: -webkit-box;
+                            -webkit-box-orient: vertical;
+                            overflow: hidden;
+                        }
+    
+                        .boton-agendar {
+                            display: flex;
+                            align-items: center;
+                            background: white;
+                            width: 9em;
+                            height: 45px;
+                            border: none;
+                            border-radius: 50px;
+                            font-size: 20px;
+                            font-weight: bold;
+                            color: #9B7757;
+                            cursor: pointer;
+                            box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+                            outline: none;
+                            transition: 0.3s;
+    
+                            .icono {
+                                width: 50px;
+                                height: 50px;
+                                background: #9B7757;
+                                border-radius: 50%;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                margin-right: 10px;
+    
+                                img {
+                                    width: 60%;
+                                    height: 60%;
+                                }
+                            }
+                        }
+                    }
+                }
+    
+                .imagenPerfil {
+                    height: 8em;
+                    width: 8em;
+                }
+    
+                .etiquetaCategoria {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    background: rgb(0, 0, 0);
+                    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 4%, rgba(0, 0, 0, 0.3477766106442577) 10%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 39%);
+                    padding: .2em 2.5em;
+                    font-weight: bold;
+                    z-index: 2;
+                    font-size: 1.1em;
+                }
+            }
+        }
+    
+        /*inicio clases para ejecutar animaciones y cambios en el carrusel */
+        .elementoCarrusel::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+    
+        .elementoCarrusel.activo {
+            transform: scale(1.1);
+            opacity: 1;
+            z-index: 10;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+    
+        .elementoCarrusel.activo .imagenPerfil {
+            height: 10em;
+            width: 10em;
+        }
+    
+        .elementoCarrusel.activo .tituloEstablecimiento {
+            font-size: 2rem;
+        }
+    
+        .elementoCarrusel.activo .descripcionEstablecimiento {
+            font-size: 0.9rem;
+            line-clamp: 4;
+        }
+    
+        /*fin clases para ejecutar animaciones y cambios en el carrusel */
+    
+        /*inicio botones de el carrusel */
+        .boton-agendar:hover {
+            background: var(--color-primary);
+            color: var(--color-white);
+        }
+    
+        .botonNavegacion {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background-color: #b78d65;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 20;
+            transition: background-color 0.3s;
+        }
+    
+        .botonNavegacion:hover {
+            background-color: #9a7553;
+        }
+    
+        .botonAnterior {
+            left: 20px;
+        }
+    
+        .botonSiguiente {
+            right: 20px;
+        }
+    
+        /*fin botones de el carrusel */
+    }
+    
+
+  
+    
+
+
+
+    .establecimientosRecomendados {
+        padding: 3em;
+        width: 100%;
+        gap: 2em;
+        display: grid;
+        justify-content: center;
+    
+        .tituloSeccion {
+            text-align: center;
+            font-size: 1.7em;
+        }
+    
+        .contenedorEstablecimientos {
+            display: flex;
+            flex-direction: column;
+            gap: 3em;
+            align-items: center;
+            justify-content: center;
+    
+            .cartaEstablecimiento {
+                width: 20em;
+                border: 2px solid var(--color-primary);
+                border-radius: .8em;
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                color: var(--color-black);
+                position: relative;
+                justify-content: space-between;
+                height: 100%;
+    
+                img {
+                    width: 100%;
+                    height: 14em;
+                    object-fit: cover;
+                    margin-bottom: -.5em;
+                }
+    
+                .contenedorInformacion {
+                    display: flex;
+                    flex-direction: column;
+                    flex-grow: 1;
+    
+                    /* Hace que la información crezca ocupando el espacio disponible */
+                    .informacion {
+                        display: grid;
+                        flex-grow: 1;
+                        /* Esto empuja el botón hacia abajo */
+    
+                        grid-template-columns: 1fr 1fr;
+                        align-items: center;
+                        padding: .8em .8em 0 .8em;
+                        background-color: var(--color-white);
+                        gap: .7em;
+                        border-top: 2px solid var(--color-primary);
+                        border-radius: 1em;
+    
+    
+                        .nombreDescripcion {
+                            height: 100%;
+                            font-weight: bold;
+                            font-size: 0.9em;
+    
+                            h2 {
+                                display: block;
+                                max-width: 100%;
+                                /* Evita que el texto expanda el contenedor */
+                                overflow-wrap: break-word;
+                                /* Permite que las palabras largas se corten */
+                                word-break: break-word;
+                                /* Compatibilidad con navegadores más antiguos */
+                                white-space: normal;
+                                /* Asegura que el texto pueda romperse */
+                            }
+    
+                            p {
+                                font-weight: normal;
+                                font-size: 1em;
+    
+                            }
+                        }
+    
+                        .servicios {
+                            height: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            padding-left: 1em;
+                            border-left: 2px solid #a67c52;
+                            font-size: 1em;
+    
+                            ul {
+                                list-style: none;
+                                padding: 0;
+                                margin: 0;
+    
+                                li {
+                                    font-size: 1em;
+    
+    
+    
+                                }
+                            }
+    
+                            .puntuacion {
+                                margin-top: auto;
+                                /* Empuja la puntuación al fondo */
+                                font-size: 1.7em;
+                                color: var(--color-primary);
+                            }
+                        }
+                    }
+    
+                    .contenedorBotonAgendar {
+                        margin-top: auto;
+                        /* Empuja el botón al fondo */
+    
+                        text-align: center;
+                        padding: .5em;
+                    }
+    
+                    .botonAgendar {
+                        background-color: #a67c52;
+                        color: white;
+                        padding: 0.2em 1em;
+                        border: none;
+                        border-radius: 5px;
+                        font-size: 1em;
+                        font-weight: bold;
+                        cursor: pointer;
+                    }
+    
+                    .botonAgendar:hover {
+                        background-color: #8b5e34;
+                    }
+                }
+            }
+        }
+    
+    
+    }
+    
+
+    .establecimientosDestacados {
+        gap: 2em;
+
+        .contenedorImagenesDestacado {
+            display: flex;
+            flex-direction: column; /* Asegura que los elementos estén en columna */
+            align-items: center;
+            padding-top: 3em;
+            gap: 2em;
+        }
+
+        .cardDestacado {
+            width: 100%; /* Ocupan todo el ancho disponible */
+            max-width: 20em; /* Mantiene tamaño */
+            height: 300px;
+
+        }
+
+        .cardDestacado:hover { /* Efecto al pasar el mouse */
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+        }
+    }
+
+    footer {
+        .sta {
+            /* dentro del contenedor sta apilaremos su contenido*/
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            padding: 2em;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1em;
+            place-content: center;
+
+            .contenedorLogoFooter {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 1em;
+            }
+        }
+    }
+}

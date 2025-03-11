@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet"  href="style.css">
+    <title>Servicios a Tu Alcance: Barberías y Más</title>
+</head>
+<body>
+    
+
+    <!-- SECCION DE IMAGEN DE PUBLICIDAD DE ESTABLECIMIENTOS -->
+    <section class="sectionPublicidad">
+
+        <!-- MENU DE NAVEGACION DEL USUARIO CON RESPECTO A SU INDEX -->
+        <nav class="menuUsuario">
+
+            <h1 class="nomApp">MYLOOK</h1>
+
+            <ul class="menuNav">
+                <li>
+                    <button type="submit" class="optionNav btnInicio">Inicio</button>
+                    <button type="submit" class="optionNav">Ranking</button>
+                    <button type="submit" class="optionNav">Ubicaciones</button>
+                    <button type="submit" class="optionNav">Sitios</button>
+                    <img src="" alt="" class="imgPerfil">
+
+                </li>
+            </ul>
+        </nav>
+
+        <!--CONTENEDOR IMAGEN DE PUBLICIDAD DE ESTABLECIMIENTOS -->
+        <figure class="imgEstablecimientos">
+            <img src="https://st2.depositphotos.com/1001094/8449/i/450/depositphotos_84497136-stock-photo-barber-shop-in-amsterdam.jpg" alt="" class="imgPublicitaria">
+
+            <div class="infoimgPublicitarias">
+                <h2 class="nomSitio">BARBERIA IMPERIO BARBER</h2>
+
+                <span class="redirectFormAgendamiento">
+                    <p class="redirectTittle">Agendar</p>
+                    <i class="fas fa-sign-out-alt"></i>
+                </span>
+            </div>
+        </figure>
+
+    </section>
+
+     <!-- SECCION DE ESTABLECIMIENTOS DE MYLOOK -->
+     <section class="sectionEstablecimiento">
+
+        <!-- TEXTO DE ESTABLECIMIENTOS DE MYLOOK -->
+        <aside class="txtEstablecimiento">
+
+            <!-- TITULO DE ESTABLECIMIENTOS DE MYLOOK -->
+            <h2 class="titleEstablecimiento">ESTABLECIMIENTOS DESTACADOS DE LA SEMANA</h2>
+
+        </aside>
+
+        <!-- IMAGEN DE ESTABLECIMIENTOS DE MYLOOK -->
+        <figure class="imgEstablecimiento">
+
+            <!-- ESTABLECIMIENTO QUE OFRECE MYLOOK -->
+            <article class="topEstablecimiento topDos">
+                <figure class="containerTop">
+                    <img src="https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/348774653/original/1799571194ddb4cc4fce4e5c0af847fd8a27935b/make-outstanding-barber-and-barber-shop-logo-design.jpg" alt="" class="imgTopEtablecimiento">
+                </figure>
+                <span class="nomTopEstablecimiento">
+                    <p class="nomUnitedTop">{{$mejoresEstablecimientos['0']['nombre_establc']}}</p>
+                </span>
+            </article>
+
+            <!-- ESTABLECIMIENTO QUE OFRECE MYLOOK -->
+            <article class="topEstablecimiento">
+                <figure class="containerTop">
+                    <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/barbershop-logo-design-template-8e21faf7c4ea8c885887247621683517_screen.jpg?ts=1640535757" alt="" class="imgTopEtablecimiento">
+                </figure>
+                <span class="nomTopEstablecimiento">
+                    <p class="nomUnitedTop">{{$mejoresEstablecimientos['0']['nombre_establc']}}</p>
+                </span>
+            </article>
+
+            <!-- ESTABLECIMIENTO QUE OFRECE MYLOOK -->
+            <article class="topEstablecimiento topTres">
+                <figure class="containerTop">
+                    <img src="https://i.pinimg.com/474x/66/2f/7e/662f7e2e139adf567b55dc8e297d7923.jpg" alt="" class="imgTopEtablecimiento">
+                </figure>
+                <span class="nomTopEstablecimiento">
+                    <p class="nomUnitedTop">{{$mejoresEstablecimientos['0']['nombre_establc']}}</p>
+                </span>
+            </article>
+
+        </figure>
+
+    </section>
+
+    <!-- SECCION DE MAPA CERCA DE TI DE LOS ESTABLECIMIENTOS REGISTRADOS -->
+     <section class="sectionMap">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d63720.60039235785!2d-76.54643069551547!3d3.4619162842641145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sbarberias!5e0!3m2!1ses!2sco!4v1735202368021!5m2!1ses!2sco" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>     
+     </section>
+
+    <!-- SECCION DE ESTABLECMIMIENTOS REGISTRADOS EN EL SISTEMA -->
+     <section class="sectionEstablecimientos">
+
+        <span class="tittleEstablecimientos">
+
+            <h3 class="tittle">ESTABLECIMIENTOS RECOMENDADOS</h3>
+
+            <div class="barShearch">
+                <i class="fas fa-search"></i>
+                <input type="text" name="search" id="search" placeholder="Buscar establecimiento..." class="inputSearch">
+            </div>
+        </span>
+
+        <!-- CONTENEDOR PADRE DE LOS ESTABLECIMIENTOS A MOSTRAR EN MYLOOK -->
+        <figure class="containerEstablecimiento">
+
+            <!-- ESTABLECIMIENTOS REGISTRADO EN MYLOOK -->
+            <article class="establecimientosUnited">
+                <img src="" alt="" class="allEstablecimiento">
+                <span class="infoEstablecimiento">
+
+                    <aside class="infoBasica">
+
+                        <h2 class="nomEstablecimiento">{{$mejoresEstablecimientos['0']['nombre_establc']}}</h2>
+                        <P class="sloganEstablecimiento">{{$mejoresEstablecimientos['0']['desc_establc']}}
+                        </P>
+                    </aside>
+
+                    <div class="infoEspecialidades">
+                        <h3 class="especialidadesEstablecimiento">ESPECIALIDADES</h3>
+
+                        <span class="especialidadEstablecimiento">
+                            <P class="infoEspacialidad">Cortes</P>
+                            <P class="infoEspacialidad">Manicure</P>
+                            <P class="infoEspacialidad">Spa</P>
+                        </span>
+
+                        <figure class="startValoracion">
+                            <i class="far fa-star"></i> <!-- Estrella vacía -->
+                            <i class="far fa-star"></i> <!-- Estrella vacía -->
+                            <i class="far fa-star"></i> <!-- Estrella vacía -->
+                            <i class="far fa-star"></i> <!-- Estrella vacía -->
+                            <i class="far fa-star"></i> <!-- Estrella vacía -->
+                        </figure>
+                    </div>
+
+                </span>
+                <button type="submit" class="btnAgenda" value="{{$mejoresEstablecimientos['0']['id_establc']}}">AGENDAR</button>
+            </article>
+
+               <!-- ESTABLECIMIENTOS REGISTRADO EN MYLOOK -->
+               <article class="establecimientosUnited">
+                <img src="" alt="" class="allEstablecimiento">
+                <span class="infoEstablecimiento">
+
+                    <aside class="infoBasica">
+
+                        <h2 class="nomEstablecimiento">{{$mejoresEstablecimientos['0']['nombre_establc']}}</h2>
+                        <P class="sloganEstablecimiento">{{$mejoresEstablecimientos['0']['desc_establc']}}
+                        </P>
+                    </aside>
+
+                    <div class="infoEspecialidades">
+                        <h3 class="especialidadesEstablecimiento">ESPECIALIDADES</h3>
+
+                        <span class="especialidadEstablecimiento">
+                            <P class="infoEspacialidad">Cortes</P>
+                            <P class="infoEspacialidad">Manicure</P>
+                            <P class="infoEspacialidad">Spa</P>
+                        </span>
+
+                        <figure class="startValoracion">
+                            <i class="far fa-star"></i> <!-- Estrella vacía -->
+                            <i class="far fa-star"></i> <!-- Estrella vacía -->
+                            <i class="far fa-star"></i> <!-- Estrella vacía -->
+                            <i class="far fa-star"></i> <!-- Estrella vacía -->
+                            <i class="far fa-star"></i> <!-- Estrella vacía -->
+                        </figure>
+                    </div>
+
+                </span>
+                <button type="submit" class="btnAgenda" value="{{$mejoresEstablecimientos['0']['id_establc']}}">AGENDAR</button>
+            </article>
+
+               <!-- ESTABLECIMIENTOS REGISTRADO EN MYLOOK -->
+               <article class="establecimientosUnited">
+                <img src="" alt="" class="allEstablecimiento">
+                <span class="infoEstablecimiento">
+
+                    <aside class="infoBasica">
+
+                        <h2 class="nomEstablecimiento">{{$mejoresEstablecimientos['0']['nombre_establc']}}</h2>
+                        <P class="sloganEstablecimiento">{{$mejoresEstablecimientos['0']['desc_establc']}}
+                        </P>
+                    </aside>
+
+                    <div class="infoEspecialidades">
+                        <h3 class="especialidadesEstablecimiento">ESPECIALIDADES</h3>
+
+                        <span class="especialidadEstablecimiento">
+                            <P class="infoEspacialidad">Cortes</P>
+                            <P class="infoEspacialidad">Manicure</P>
+                            <P class="infoEspacialidad">Spa</P>
+                        </span>
+
+                        <figure class="startValoracion">
+                            <i class="far fa-star"></i> <!-- Estrella vacía -->
+                            <i class="far fa-star"></i> <!-- Estrella vacía -->
+                            <i class="far fa-star"></i> <!-- Estrella vacía -->
+                            <i class="far fa-star"></i> <!-- Estrella vacía -->
+                            <i class="far fa-star"></i> <!-- Estrella vacía -->
+                        </figure>
+                    </div>
+
+                </span>
+                <form action="{{ url('/usuarios/agendar') }}" method="GET">
+                    @csrf
+                    <button type="submit" class="btnAgenda" value="{{$mejoresEstablecimientos['0']['id_establc']}}" name="id_establecimiento">AGENDAR</button>
+                </form>
+
+            </article>
+
+               <!-- ESTABLECIMIENTOS REGISTRADO EN MYLOOK -->
+               <article class="establecimientosUnited">
+                <img src="" alt="" class="allEstablecimiento">
+                <span class="infoEstablecimiento">
+
+                    <aside class="infoBasica">
+
+                        <h2 class="nomEstablecimiento">{{$mejoresEstablecimientos['0']['nombre_establc']}}</h2>
+                        <P class="sloganEstablecimiento">{{$mejoresEstablecimientos['0']['desc_establc']}}
+                        </P>
+                    </aside>
+
+                    <div class="infoEspecialidades">
+                        <h3 class="especialidadesEstablecimiento">ESPECIALIDADES</h3>
+
+                        <span class="especialidadEstablecimiento">
+                            <P class="infoEspacialidad">Cortes</P>
+                            <P class="infoEspacialidad">Manicure</P>
+                            <P class="infoEspacialidad">Spa</P>
+                        </span>
+
+                        <figure class="startValoracion">
+                            <i class="far fa-star"></i> <!-- Estrella vacía -->
+                            <i class="far fa-star"></i> <!-- Estrella vacía -->
+                            <i class="far fa-star"></i> <!-- Estrella vacía -->
+                            <i class="far fa-star"></i> <!-- Estrella vacía -->
+                            <i class="far fa-star"></i> <!-- Estrella vacía -->
+                        </figure>
+                    </div>
+
+                </span>
+                <button type="submit" class="btnAgenda" value="{{$mejoresEstablecimientos['0']['id_establc']}}">AGENDAR</button>
+            </article>
+            
+         
+ 
+        </figure>
+
+     </section>
+
+    <!-- SECCION FOOTER DE MYLOOK -->
+    <section class="sectionFooter">
+
+        <!-- SECCION DE FOOTER SOBRE NOSOTROS -->
+        <article class="infoFooter infoUno">
+
+            <span class="infoSTA">
+                <h3 class="tittleNosotros">Sobre Nosotros</h3>
+                <p class="descrip">¿ Quienes somos ?</p>
+                <p class="descrip">Contactanos</p>
+                <p class="descrip">Centro de ayuda</p>
+
+                <span class="socialMediaFooter">
+                    <!-- Icono Facebook -->
+                    <i class="fab fa-facebook-f social-icon"></i>
+
+                    <!-- Icono WhatsApp -->
+                    <i class="fab fa-whatsapp social-icon"></i>
+
+                    <!-- Icono YouTube -->
+                    <i class="fab fa-youtube social-icon"></i>
+
+                    <!-- Icono Twitter -->
+                    <i class="fab fa-twitter social-icon"></i>
+
+                    <!-- Icono Instagram -->
+                    <i class="fab fa-instagram social-icon"></i>
+                </span>
+            </span>
+        </article>
+
+        <!-- SECCION DE FOOTER LOGO DE DESARROLLADORES -->
+        <article class="infoFooter">
+
+            <span class="infoSTA infoMedio">
+                <i class="fas fa-lightbulb"></i>
+                <h3 class="tittleDesarrollo">STA</h3>
+            </span>
+        </article>
+
+        <!-- SECCION DE FOOTER SOBRE CONTACTANOS -->
+        <article class="infoFooter infoTres">
+
+            <span class="infoSTA">
+
+                <!-- FORMULARIO DE INSERCCION DE INFORMACION SOBRE ACTUALIZACIONES DE MYLOOK -->
+                <form action="" method="post" class="formPromocion">
+
+                     <!-- Icono Correo -->
+                     <i class="fas fa-envelope"></i>   
+                    <input type="email" name="emailPromocion" id="email" placeholder="Ingresa tu correo..." class="inputPromocion"> 
+                    <button type="submit" class="btnPromocion">Enviar</button>           
+                </form>
+
+                <!-- NOTA QUE EXPLICA QUE HACE EL FORMULARIO DE ARRIBA -->
+                <span class="notaForm">
+                    <p class="nota"><strong>Nota: </strong>La inscripcion del correo sera beneficioso para saber todos los detalles de nuestras futuras actualizaciones
+                    
+                    </p>
+                </span>
+            </span>
+        </article>
+
+    </section>
+
+    <!-- ------------------------------------------------------------------------------------------------------------ -->
+
+</body>
+</html>

@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI";
+}
+
+/* Variables de css*/
+:root {
+  --color-primary: #a68160;
+  --color-secondary: #f2f2f2;
+  --color-white: white;
+  --color-black: black;
+}
+body {
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+}
+
+aside {
+  background-color: var(--color-primary);
+  display: grid;
+  justify-content: center;
+  max-height: 100vh;
+  color: var(--color-white);
+  padding: 2em;
+  .mensajeBienvenida {
+    text-align: center;
+
+    h3 {
+      font-size: 1.5em;
+    }
+    h1 {
+      font-size: 2em;
+    }
+  }
+  figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10em;
+
+    img {
+      width: 10em;
+      height: 10em;
+      background-position: center;
+      object-fit: cover;
+      border-radius: 100%;
+    }
+  }
+
+  .contenedorOpciones {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    grid-template-rows: repeat(2, auto); /* 2 filas */
+    gap: 1rem; /* Espaciado entre botones */
+    width: 100%;
+  }
+
+  .opcion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .botonOpcion {
+    width: 100%;
+    padding: 10px 15px;
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+
+  .botonOpcion:hover {
+    background-color: var(--colorSecundario, #8c6b52);
+  }
+}
+
+main {
+  .configuracionAdministrador {
+    .configuracionPerfil {
+      padding: 1em 3em;
+      display: grid;
+      justify-content: center;
+      gap: 2em;
+      align-items: center;
+      height: 100vh;
+
+      .tituloPrincipal {
+        text-align: center;
+        font-size: 2.5em;
+      }
+      p {
+        font-size: 1.1em;
+      }
+      .formularioPerfil {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, auto);
+        gap: 1em;
+      }
+
+      .formularioPerfil div:nth-child(1),
+      .formularioPerfil div:nth-child(2),
+      .formularioPerfil div:nth-child(3),
+      .formularioPerfil div:nth-child(4),
+      .formularioPerfil div:nth-child(5),
+      .formularioPerfil div:nth-child(7) {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .formularioPerfil div:nth-child(1) {
+        grid-column: 1;
+        grid-row: 1;
+      }
+      .formularioPerfil div:nth-child(2) {
+        grid-column: 1;
+        grid-row: 2;
+      }
+      .formularioPerfil div:nth-child(3) {
+        grid-column: 1;
+        grid-row: 3;
+      }
+      .formularioPerfil div:nth-child(4) {
+        grid-column: 1;
+        grid-row: 4;
+      }
+      .formularioPerfil div:nth-child(5) {
+        grid-column: 1;
+        grid-row: 5;
+      }
+      .formularioPerfil figure:nth-child(7) {
+        grid-column: 1;
+        grid-row: 6;
+      }
+
+      .formularioPerfil figure {
+        grid-column: 2;
+        grid-row: span 4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      .formularioPerfil figure::before {
+        content: "";
+        width: 20em;
+        height: 20em;
+        background: #f5f5f5;
+        border-radius: 10000%;
+        position: absolute;
+      }
+
+      .formularioPerfil figure input {
+        position: absolute;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+      }
+
+      .formularioPerfil figure::after {
+        content: "SELECCIONE UNA IMAGEN";
+        position: absolute;
+        font-size: 1.2em;
+        font-weight: bold;
+        width: 9em;
+        color: #8c6239;
+        text-align: center;
+      }
+    }
+    .contenedorBoton {
+      display: flex;
+      justify-content: right;
+      align-items: right;
+
+      .botonContinuar {
+        background-color: var(--color-primary);
+        color: var(--color-white);
+        border: none;
+        font-size: 1.4em;
+        font-weight: bold;
+        padding: 0.6em 1.3em;
+        border-radius: 0.7em;
+      }
+    }
+  }
+  .informacionInput {
+    display: flex;
+    flex-direction: column;
+
+    .nombreInput {
+      color: #a68160;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    /*estilos para los diferentes inputs*/
+    input,
+    select,
+    textarea {
+      font-size: 1.2em;
+      border: none;
+      font-weight: 500;
+      width: 100%;
+      padding: 0.5em 0;
+      border-radius: 0.7em;
+      resize: vertical;
+      overflow-y: auto;
+      background-color: var(--color-secondary);
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      padding-left: 0.5em;
+    }
+
+    textarea {
+      max-width: 100%;
+    }
+  }
+}
+
+
+.formulario {
+  display: none;
+}
+.formulario.active {
+  display: block;
+}

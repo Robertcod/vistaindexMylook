@@ -1,0 +1,805 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI";
+}
+
+/* Variables de css*/
+:root {
+  --color-primary: #a68160;
+  --color-secondary: #f2f2f2;
+  --color-white: white;
+  --color-black: black;
+}
+
+/* dividimos la pagina en dos partes dejando la seccion de la derecha mas grande */
+body {
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+  min-height: 100vh;
+}
+
+/* barra de informacion izquierda */
+aside {
+  background-color: var(--color-primary);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  color: var(--color-white);
+  padding: 2em;
+
+
+  /* icono de salir */
+  .iconoSalir {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    color: var(--color-secondary);
+    cursor: pointer;
+  }
+
+  /* contenedor de la informacion en la aside */
+  .contenedorBienvenida {
+    display: grid;
+    gap: 2em;
+  }
+
+  /* mensaje */
+  .mensajeBienvenida {
+    text-align: center;
+    display: grid;
+    align-items: center;
+
+    h3 {
+      font-size: 1.5em;
+    }
+
+    h1 {
+      font-size: 2em;
+    }
+  }
+
+  /* contenedor de la foto de el usuario */
+  figure {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    max-width: 9em;
+    max-height: 9em;
+    padding: 0;
+    margin: 0 auto;
+
+    /* imagen de usuario */
+    img {
+      width: 9em;
+      height: 9em;
+      background-position: center;
+      object-fit: cover;
+      border-radius: 100%;
+      display: block;
+    }
+  }
+
+  /* contenedor de consejo e introduccion */
+  .introduccionConfiguracion {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+
+    .tituloIntroduccion {
+      display: grid;
+      gap: 1em;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 1.3em;
+    }
+
+    h2 {
+      font-size: 1.3em;
+    }
+
+    p {
+      font-size: .9em;
+    }
+  }
+
+  .nota {
+    p {
+      font-size: .9em;
+    }
+  }
+}
+
+
+/* contenedor hijo derecho del body */
+main {
+  width: 100%;
+
+  /* contenedor de los formularios */
+  .configuracionAdministrador {
+    height: 100%;
+
+    /* primer formulario de perfil */
+    .configuracionPerfil {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      justify-content: stretch;
+      width: 100%;
+      padding: 1em 2em;
+      gap: 1em;
+      height: 100%;
+
+      .tituloPrincipal {
+        text-align: center;
+        font-size: 2.5em;
+      }
+
+      p {
+        font-size: 1.1em;
+      }
+
+      /* contenedor de campos del formulario */
+      .formularioPerfil {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, auto);
+        gap: 1em;
+
+      }
+
+      .formularioPerfil div:nth-child(1),
+      .formularioPerfil div:nth-child(2),
+      .formularioPerfil div:nth-child(3),
+      .formularioPerfil div:nth-child(4),
+      .formularioPerfil div:nth-child(5),
+      .formularioPerfil div:nth-child(7) {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .formularioPerfil div:nth-child(1) {
+        grid-column: 1;
+        grid-row: 1;
+      }
+
+      .formularioPerfil div:nth-child(2) {
+        grid-column: 1;
+        grid-row: 2;
+      }
+
+      .formularioPerfil div:nth-child(3) {
+        grid-column: 1;
+        grid-row: 3;
+      }
+
+      .formularioPerfil div:nth-child(4) {
+        grid-column: 1;
+        grid-row: 4;
+      }
+
+      .formularioPerfil div:nth-child(5) {
+        grid-column: 1;
+        grid-row: 5;
+      }
+
+      .formularioPerfil figure:nth-child(7) {
+        grid-column: 1;
+        grid-row: 6;
+
+      }
+
+      .formularioPerfil figure {
+        grid-column: 2;
+        grid-row: span 4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      .formularioPerfil figure::before {
+        content: "";
+        width: 20em;
+        height: 20em;
+        background: var(--color-secondary);
+        border-radius: 10000%;
+        position: absolute;
+        z-index: 1;
+      }
+
+      .formularioPerfil figure img {
+        width: 20em;
+        height: 20em;
+        object-fit: cover;
+        border-radius: 10000%;
+        z-index: 2;
+      }
+
+      .formularioPerfil figure input {
+        position: absolute;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        z-index: 3;
+      }
+
+      .formularioPerfil figure::after {
+        content: "SELECCIONE UNA IMAGEN";
+        position: absolute;
+        font-size: 1.2em;
+        font-weight: bold;
+        width: 9em;
+        color: #8c6239;
+        text-align: center;
+        z-index: 1;
+        /* El texto de la etiqueta está debajo de la imagen */
+      }
+    }
+
+    /* general */
+    .contenedorBoton {
+      display: flex;
+      justify-content: right;
+      align-items: end;
+
+      .botonContinuar {
+        background-color: var(--color-primary);
+        color: var(--color-white);
+        border: none;
+        font-size: 1.4em;
+        font-weight: bold;
+        padding: 0.6em 1.3em;
+        border-radius: 0.7em;
+        max-height: 2.5em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .configuracionEstablecimiento {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      justify-content: stretch;
+      width: 100%;
+      padding: 1em 2em;
+      gap: 1em;
+      height: 100%;
+
+      .tituloPrincipal {
+        text-align: center;
+        font-size: 2.2em;
+        width: 100%;
+
+      }
+
+      p {
+        font-size: 1.2em;
+        width: 100%;
+
+      }
+
+      .formularioEstablecimiento {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto auto;
+        gap: .8em;
+        width: 100%;
+        height: 100%;
+
+
+        .informacionInput:nth-child(1) {
+          grid-column: 1;
+          grid-row: 1;
+        }
+
+        /* NIT */
+        .informacionInput:nth-child(2) {
+          grid-column: 1;
+          grid-row: 2;
+        }
+
+        /* Nombre */
+        .informacionInput:nth-child(3) {
+          grid-column: 1;
+          grid-row: 3;
+        }
+
+        /* Dirección */
+        .informacionInput:nth-child(4) {
+          grid-column: 2;
+          grid-row: 1 / span 3;
+        }
+
+        /* Descripción (grande en la derecha) */
+        .informacionInput:nth-child(5) {
+          grid-column: 1;
+          grid-row: 4;
+        }
+
+        /* Teléfono */
+        .informacionInput:nth-child(6) {
+          grid-column: 2;
+          grid-row: 4;
+        }
+
+      }
+    }
+
+  }
+
+  .informacionInput {
+    display: flex;
+    flex-direction: column;
+
+    .nombreInput {
+      color: #a68160;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    /*estilos para los diferentes inputs*/
+
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 1.2em;
+    border: none;
+    font-weight: 500;
+    width: 100%;
+    padding: 0.5em 0;
+    border-radius: 0.7em;
+    resize: vertical;
+    overflow-y: auto;
+    background-color: var(--color-secondary);
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    padding-left: 0.5em;
+  }
+
+  textarea {
+    resize: none;
+    overflow: hidden;
+    /* Esto también ayuda a evitar el desplazamiento si se introduce más texto del tamaño visible */
+  }
+
+  .formulario {
+    display: none;
+    grid-template-rows: 1fr;
+    /* Hace que ocupe todo el espacio disponible */
+    justify-content: stretch;
+    align-items: stretch;
+    width: 100%;
+    animation: aparecer 0.5s ease-out forwards;
+
+  }
+
+  .formulario.active {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Solo una columna */
+    grid-template-rows: auto;
+    /* Para que su contenido crezca */
+    justify-content: stretch;
+    width: 100%;
+
+  }
+
+  .configuracionNegocio {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    justify-content: stretch;
+    width: 100%;
+    padding: 1em 2em;
+    gap: 1em;
+    height: 100%;
+
+    .tituloPrincipal {
+      text-align: center;
+      font-size: 2em;
+      width: 100%;
+
+    }
+
+    .contenedorImagen {
+      position: relative;
+      width: 100%;
+      height: 17em;
+      border-radius: 2em;
+
+
+      .imagenFondo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        cursor: pointer;
+        border-radius: 2em 2em 0 0;
+
+
+      }
+
+      .logoNegocio {
+        position: absolute;
+        bottom: -1.4em;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 15em;
+        border-radius: 100%;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        border: 2px solid var(--color-primary);
+        z-index: 1000;
+        /* Se asegura de que esté por encima de todo */
+
+
+
+      }
+
+      .logoNegocio img {
+        width: 15em;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 100%;
+
+      }
+
+      /* Inputs invisibles para cambiar la imagen */
+      .inputFile {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+
+
+      }
+
+      .inputDescrip {
+        resize: none;
+
+      }
+    }
+
+    .formularioNegocio {
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .8em;
+
+    }
+  }
+
+}
+
+.open-btn {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 20px;
+  left: 20px;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  padding: 7px 8px;
+  border-radius: 1000%;
+  cursor: pointer;
+  z-index: 1000;
+  display: none;
+
+  img {
+    width: 2em;
+    height: 2em;
+  }
+}
+
+/* Estilo para el aside flotante */
+#myAside {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  background-color: #111;
+  color: white;
+  padding: 20px;
+  height: 100vh;
+  transform: translateX(-100%);
+  /* Está oculto por defecto */
+  transition: transform 0.3s ease;
+  z-index: 100;
+
+}
+
+/* Estilo para mostrar el aside flotante */
+#myAside.open {
+  transform: translateX(0);
+}
+
+/* Mostrar el botón flotante y aside solo en dispositivos móviles */
+@media (max-width: 1000px) {
+  body {
+    grid-template-columns: 1fr;
+  }
+
+  aside {
+    display: none;
+  }
+
+  .open-btn {
+    display: block;
+    /* Mostrar el botón en móviles */
+  }
+
+  #myAside {
+    display: grid;
+    background-color: var(--color-primary);
+    padding: 4em 2em;
+    z-index: 120;
+    gap: 2em;
+
+    .iconoSalir {
+      position: absolute;
+      top: 1.5em;
+      left: auto;
+      right: 10px;
+      width: 3em;
+    }
+
+    .mensajeBienvenida {
+      h3 {
+        font-size: 1em;
+      }
+
+      h1 {
+        font-size: 1.5em;
+      }
+    }
+
+    figure {
+      height: 8em;
+
+      img {
+        width: 8em;
+        height: 8em;
+      }
+    }
+
+    .introduccionConfiguracion {
+      .tituloIntroduccion {
+        display: grid;
+        gap: 1em;
+
+        h2 {
+          font-size: 1.3em;
+        }
+
+        p {
+          font-size: .9em;
+        }
+      }
+
+      .nota {
+        p {
+          font-size: .9em;
+        }
+      }
+    }
+  }
+
+  main {
+    .configuracionAdministrador {
+      .configuracionPerfil {
+        height: 100% !important;
+        gap: 2em;
+
+        .tituloPrincipal {
+          text-align: center;
+          font-size: 2em;
+
+
+          p {
+            font-size: 1em;
+          }
+        }
+
+        .formularioPerfil {
+          display: grid;
+          grid-template-columns: 1fr;
+          /* Forzar una sola columna */
+          grid-auto-rows: auto;
+          gap: 1em;
+        }
+
+        /* Ajustar cada div a su respectiva posición */
+        .formularioPerfil div:nth-child(1) {
+          grid-row: 1;
+        }
+
+        .formularioPerfil div:nth-child(2) {
+          grid-row: 2;
+        }
+
+        .formularioPerfil div:nth-child(3) {
+          grid-row: 3;
+        }
+
+        .formularioPerfil div:nth-child(4) {
+          grid-row: 4;
+        }
+
+        .formularioPerfil div:nth-child(5) {
+          grid-row: 5;
+        }
+
+        .formularioPerfil div:nth-child(7) {
+          grid-row: 7;
+        }
+
+        /* Forzar figure a la última posición */
+        .formularioPerfil figure {
+          grid-column: 1;
+          grid-row: 8;
+        }
+      }
+
+      .configuracionNegocio {
+        height: 100%;
+        padding: 2em 3em;
+        gap: 2em;
+        border-radius: 2em 2em 0 0;
+
+        .contenedorImagen {
+          height: 19em;
+        }
+
+        .logoNegocio {
+          height: 13em;
+          z-index: 2;
+        }
+
+        .logoNegocio img {
+          width: 13em;
+        }
+
+        .formularioNegocio {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 2em;
+
+          .inputDescrip {
+            height: 7em;
+            /* Aumentar la altura en móviles */
+          }
+        }
+
+        .formularioNegocio .informacionInput:nth-child(1) {
+          grid-row: 1;
+        }
+
+        .formularioNegocio .informacionInput:nth-child(2) {
+          grid-row: 2;
+        }
+
+        .formularioNegocio .informacionInput:nth-child(4) {
+          grid-row: 3;
+        }
+
+        /* ADMINISTRADOR LIDER */
+        .formularioNegocio .informacionInput:nth-child(3) {
+          grid-row: 4;
+        }
+
+        /* DESCRIPCIÓN al final */
+      }
+
+      .configuracionEstablecimiento {
+        height: 100%;
+        gap: 2em;
+
+        .tituloPrincipal {
+          font-size: 2em;
+        }
+
+        p {
+          font-size: 1.2em;
+        }
+
+        .formularioEstablecimiento {
+          display: flex;
+          flex-direction: column;
+
+
+          .informacionInput:nth-child(4) {
+            order: 99;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1250px) {
+  .tituloPrincipal {
+    font-size: 2em;
+  }
+
+  aside {
+    gap: 1em;
+
+    .mensajeBienvenida {
+      gap: .5em;
+
+      h3 {
+        font-size: 1.2em;
+      }
+
+      h1 {
+        font-size: 1.5em;
+      }
+    }
+
+    figure {
+      img {
+        width: 7em;
+        height: 7em;
+      }
+    }
+
+    .introduccionConfiguracion {
+      .tituloIntroduccion {
+        display: grid;
+        gap: 1em;
+
+        h2 {
+          font-size: 1.3em;
+        }
+
+        p {
+          font-size: .9em;
+        }
+      }
+
+      .nota {
+        p {
+          font-size: .9em;
+        }
+      }
+    }
+  }
+}
+
+
+/* animaciones */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

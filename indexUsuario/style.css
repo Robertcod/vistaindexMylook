@@ -1,0 +1,515 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-bosx;
+}
+
+/* VARIABLES DE ENTORNO */
+:root {
+    --color-background: #624023;
+    --color-primary: #a68160;
+    --color-dark: #795434;
+    --color-white: white;
+    --color-black: black;
+}
+
+body{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+
+    /* SECCION PUBLICITARIA DE LOS ESTABLECIMIENTOS */ 
+    .sectionPublicidad{
+        border: 1px solid black;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 15% 85%;
+
+        .menuUsuario{
+            border: 1px solid black;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 35vw;
+
+            .nomApp{
+                color: var(--color-dark);
+                font-size: 3vw;
+                font-weight: bold;
+                margin-left: 2vw;
+            }
+
+            .menuNav{
+                margin-right: 2vw;
+
+                li{
+                    display: flex;
+                    gap: 2vw;
+
+                    .optionNav{
+                        height: 6vh;
+                        width: 8vw;
+                        border-radius: 5%;
+                        border: 1px solid var(--color-primary);
+                        background-color: transparent;
+                        color: var(--color-primary);
+                        font-weight: bold;
+                        font-size: 1.75vh;
+                    }
+
+                    .btnInicio{
+                        background-color: var(--color-dark);
+                        color: var(--color-white);
+                    }
+
+                    .imgPerfil{
+                        position: relative;
+                        border: 1px solid var(--color-primary);
+                        border-radius: 100%;
+                        height: 7vh;
+                        width: 3.5vw;
+                        margin-top: -.8vh;
+                    }
+                }
+            }
+        }
+
+        .imgEstablecimientos{
+            display: flex;
+            background-color: var(--color-black);
+
+            .imgPublicitaria{
+                position: relative;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                background-repeat: no-repeat;
+                opacity: .4;
+            }
+
+            
+            .infoimgPublicitarias{
+                position: absolute;
+                top: 87%; 
+                left: 0;
+                z-index: 1; 
+                height: 10vh;
+                width: 100%;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                gap: 30vw;
+            }
+
+            .redirectFormAgendamiento{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: .5vw;
+
+            
+                .redirectTittle{
+                    background-color: var(--color-white);
+                    padding: 15% 45%;
+                    color: var(--color-primary);
+                }
+
+                i{
+                    position: relative;
+                    margin-left: -1.5vw;
+                    border-radius: 100%;
+                    padding: 25%;
+                    color: var(--color-white);
+                    background-color: var(--color-dark);
+                    font-size: 4vh;
+
+                }
+            }
+
+            .nomSitio{
+                color: var(--color-white);
+                margin-left: -4vw;
+                font-size: 6vh;
+            }
+
+        }
+    }
+
+    /* SECCION DE ESTABLECIMIENTOS DE MYLOOK */
+    .sectionEstablecimiento{
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 20% 80%;
+
+            /* TEXTO INTRODUCTORIO DEL ESTABLECIMIENTO */
+            .txtEstablecimiento{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                /* TITULO DE INTRODUCCION DE ESTABLECIMIENTOS */
+                .titleEstablecimiento{
+                    font-size: 1.3vw;
+                }
+            }
+
+            /* CONTENEDOR DEL TOP DE ESTABLECIMIENTOS A MOSTRAR */
+            .imgEstablecimiento{
+                display: flex;
+                justify-content: center;
+                align-items: start;
+                gap: 3vw;
+                margin: 2% 2% 2% 2%;
+                
+                /* CONTENEDOR QUE ALMACENA TODA LA INFORMARCION DEL ESTABLECIMIENTO PERTENECIENTE EN EL TOP */
+                .topEstablecimiento{
+                    border: 1px solid var(--color-primary);
+                    height: 60%;
+                    width: 18%;
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    grid-template-rows: 75% 25%;
+                    overflow: hidden;
+                    border-radius: 3%;
+
+                    .containerTop{
+                        border: 1px solid black;
+
+                        .imgTopEtablecimiento{
+                            height: 100%;
+                            width: 100%;
+                            background-size: cover;
+                            background-position: center;
+                        }
+                    }
+
+                    .nomTopEstablecimiento{
+                        background-color: var(--color-dark);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color: var(--color-white);
+
+                        .nomUnitedTop{
+                            font-size: 2.7vh;
+                            margin: 1% 2% 1% 2%;
+
+                        }
+                    }
+                }
+
+                /* TOP DOS Y TRES VAN MAS ABAJO DE LA LINEA NATURAL DEL UNO */
+                .topDos, .topTres{
+                    margin-top: 5vh;
+                }
+            }
+    }
+
+    /* SECCION DEL MAPA CERCA DE TI */
+    .sectionMap{
+        height: 100vh;
+        background-color: var(--color-dark);
+
+        /* MAPA DEL LOS CERCANOS DE TI */
+        iframe{
+            opacity: 0.6;
+        }
+    }
+
+    /* SECCION DE ESTABLECIMIENTOS REGISTRADOS DEL SISTEMA */
+    .sectionEstablecimientos{
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 20% 80%;
+
+        /* CONTENEDOR DE TITULO Y BARRA DE BUSQUEDA DE LOS ESTABLECIMIENTOS */
+        .tittleEstablecimientos{
+            display: flex;
+            justify-content: space-around;
+            align-items: center; 
+            gap: 30vw;
+            margin-bottom: 3vh;
+            
+            /* TITULO DE LA SECCION */
+            .tittle{
+                color: var(--color-black);        
+            } 
+
+            /* BARRA DE BUSQUEDA */
+            .barShearch{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: .5vw;
+
+                /* ICONO DE LA BARRA DE BUSQUEDA */
+                i{
+                    background-color: var(--color-dark);
+                    padding: 3%;
+                    font-size: 2vh;
+                    color: var(--color-white);
+                    border-radius: 100%;
+                }
+
+                /* INPUT DE LA BUSUQEDA */
+                .inputSearch{    
+                    background-color: transparent;
+                    border: none;
+                    border-bottom: 1px solid var(--color-dark);
+                    color: var(--color-black);
+                    padding-left: .2vw;
+                    height: 3vh;
+                    width: 17vw;
+                    outline: none;
+                    font-size: .8vw;
+
+                    /* TEXTO DE LO QUE ESTA ADENTRO DE LA CAJA DEL INPUT */
+                    &::placeholder{
+                        font-style: italic;
+                        font-size: .8vw;
+                    }
+                }
+            }
+        }
+
+        /* CONTENEDOR DE ESTABLECIMIENTOS MOSTRADOS EN PANTALLA */
+        .containerEstablecimiento{
+            margin: 0% 3% 2% 3%;
+            overflow: auto;
+            flex-wrap: wrap;
+            display: flex;
+            justify-content: left;
+            align-items: start;
+            gap: 5vw;
+            padding-left: 3%;
+
+            .establecimientosUnited{
+                border: 1px solid var(--color-primary);
+                height: 70%;
+                width: 20%;
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 50% 40% 10%;
+                border-radius: 2%;
+                overflow: hidden;
+                box-shadow: 1px 1px 5px 1px var(--color-primary);
+
+                .allEstablecimiento{
+                    height: 100%;
+                    width: 100%;
+                    background-position: center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                }
+
+                .infoEstablecimiento{
+                    display: grid;
+                    grid-template-columns: 52% 1fr;
+                    grid-template-rows: 1fr;
+                    margin: 4% 1% 4% 1%;
+
+                    .infoBasica{
+                        border-right: 1px solid var(--color-primary);
+                        padding-top: 2vh;
+                        padding-left: .3vw;
+
+                        .nomEstablecimiento{
+                            font-size: .57vw;
+                            margin-bottom: 1vh;
+                            color: var(--color-dark);
+                        }
+
+                        .sloganEstablecimiento{
+                            font-size: .7vw;
+                            width: 93%;
+                            color: var(--color-primary);
+                        }
+                    }   
+                }
+
+                .infoEspecialidades{
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    grid-template-rows: 1fr 60% 20%;
+                    padding-left: 8%;
+
+                    .especialidadesEstablecimiento{
+                        padding-top: 2vh;
+                        font-size: .58vw;
+                        margin-bottom: 1vh;
+                        color: var(--color-dark);
+                    }
+
+                    .especialidadEstablecimiento{
+                        display: flex;
+                        flex-direction: column;
+                        font-size: .8vw;
+                        color: var(--color-primary);
+                    }
+
+                    .startValoracion{
+                        font-size: .9vw;
+                        margin-top: -3vh;
+                        color: var(--color-primary);
+                        cursor: pointer;
+                    }
+                }
+
+                .btnAgenda{
+                    margin: 0% 20% 1% 20%;
+                    font-size: .8vw;
+                    border: none;
+                    color: var(--color-white);
+                    background-color: var(--color-dark);
+                    border-radius: 5%;
+                    margin-bottom: 1vh;
+                }
+            }
+        }
+    }
+
+    /* SECCION DE FOOTER DE MYLOOK */
+    .sectionFooter{
+        background-color: var(--color-dark);
+        height: 25vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--color-white);
+
+        /* CONTENEDOR QUE SEPARA LA INFORMACION DE LAS DIFERENTES SECCIONES DEL FOOTER */
+        .infoFooter{
+            display: flex;
+            flex: 1;
+            height: 80%;
+
+            /* CONTENEDOR DE INFORMACION DE TODO EL FOOTER DE MYLOOK */
+            .infoSTA{
+                margin: 0% 2% 2% 2%;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: left;
+                align-items: start;
+                padding-left: 4vw;
+
+                /* TITULO SOBRE NOSOTROS */
+                .tittleNosotros{
+                    margin-bottom: 1vh;
+                    font-size: 4vh;
+                }
+            
+                /* DESCRIPCION DE LAS OPCIONES DEL FOOTER */
+                .descrip{
+                    font-size: .8vw;
+                    cursor: pointer;
+                    margin-bottom: .5vh;
+                }
+
+                /* REDES SOCIALES DE LOS DESARROLLADORES */
+                .socialMediaFooter{
+                    display: flex;
+                    gap: 3vw;  
+                    margin-top: 1.5vh; 
+                    cursor: pointer;
+                }
+            }
+
+            /* CONTENEDOR MEDIO DEL FOOTER */
+            .infoMedio{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 2vh;
+
+                /* ICONO DE LOS DESAROLLADORES */
+                i{
+                    font-size: 8.5vh;
+                }
+
+                /* TITULO DE LOS DESARROLLADORES DEL NOMBRE DE SU COMPAÑIA */
+                .tittleDesarrollo{
+                    font-size: 3vh;
+                }
+            }
+
+            /* CONTENEDOR TRES DEL FOOTER SOBRE LAS PRMOMOCIONES */
+            .infoTres{
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 75% 25%;
+
+            }
+            
+            /* CONTENEDOR DEL FOMULARIO DE LAS PROMOCIONES */
+            .formPromocion{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-top: 4vh;
+
+                /* ICONO DEL CORREO */
+                i{
+                    font-size: 2.5vh;
+                    position: absolute;
+                    margin-right: 20vw;
+                }
+
+                /* CAJA DE TEXTO DEL CORREO */
+                .inputPromocion{
+                    border: none;
+                    background-color: transparent;
+                    border-bottom: 1px solid var(--color-white);
+                    height: 150%;
+                    width: 15vw;
+                    color: var(--color-white);
+                    padding-left: 2.2vw;
+                    outline: none;
+
+                    /* CONTENIDO DE LA CAJA */
+                    &::placeholder{
+                        color: var(--color-white);
+                        font-size: 1.9vh;
+                    }
+                }
+
+                /* BOTON PARA ENVIAR CORREO A MYLOOK */
+                .btnPromocion{
+                    background-color: transparent;
+                    border: 1px solid var(--color-white);
+                    color: var(--color-white);
+                    height: 130%;
+                    width: 4vw;
+                    border-radius: 2%;
+                    cursor: pointer;
+                    transition: 1s;
+                    margin-left: 1vw;
+                }
+            }
+
+            /* NOTA IMPORTANTE DE CORREO DE PROMOCIONES */
+            .notaForm{
+                width: 90%;
+                padding-top: 3vh;  
+
+                /* TEXTO DE LA NOTA */
+                .nota{
+                    font-size: .8vw;
+                }
+            }
+        }
+
+        /* INFO UNO CONTIENE LA INFO DE TERMINOS Y CONDICIONES */
+        .infoUno{ 
+            border-right: 1px solid var(--color-white);
+        }
+
+        /* INFORMACION QUE CONTIENE LA INFO DEL FORMULARIO DE PROMOCIONES */
+        .infoTres{
+            border-left: 1px solid var(--color-white);
+        }
+    }
+}
